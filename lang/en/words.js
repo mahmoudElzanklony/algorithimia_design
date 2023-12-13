@@ -71,6 +71,7 @@ export default {
     ],
     service_title:'What are Algorithimia services?',
     service_content:'What Algorismia can provide you with are many services. If you have any questions or want to subscribe to any of these services, please contact us.',
+    service_projects_visit:'See projects related to this service',
 
   },
   /*===============================end of home page==========================================*/

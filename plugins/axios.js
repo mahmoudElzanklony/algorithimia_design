@@ -2,7 +2,7 @@ import cookie from 'cookie'
 
 export default ({ $axios, req }, inject) => {
 
-  $axios.setHeader("api_key","skillar2023");
+  $axios.setHeader("apikey","algorithimia2023");
 
   $axios.setHeader("lang",process.client ?
     localStorage.getItem('lang'):cookie.parse(req.headers.cookie || '').lang);

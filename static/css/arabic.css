@@ -2,6 +2,11 @@
   direction: rtl;
 }
 
+.services .container > div:nth-child(even) {
+  direction: ltr;
+  text-align: right;
+}
+
 .input-icon span:first-of-type {
   left: 10px;
 }
@@ -153,6 +158,10 @@
 }
 .up {
   right: 20px;
+}
+
+.ck.ck-content.ck-editor__editable {
+  text-align: right;
 }
 
 /*# sourceMappingURL=arabic.css.map */

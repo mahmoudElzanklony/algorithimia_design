@@ -21,9 +21,10 @@
 }
 .btn-outline-primary{
   border-color: $main_color;
+
   &:hover,&:focus,&:active{
     background-color: $main_color;
-    color:white;
+    color:white !important;
     border-color: $main_color;
     box-shadow: none !important;
   }

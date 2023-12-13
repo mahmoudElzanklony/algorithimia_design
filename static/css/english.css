@@ -3,7 +3,7 @@ p {
 }
 
 a {
-  font-size: 15px !important;
+  font-size: 14px !important;
   color: #1093F1;
   text-display: none;
 }
@@ -19,6 +19,11 @@ h1 {
 /*#navbarSupportedContent{
   flex-direction: row-reverse;
 }*/
+.services .container > div:nth-child(even) {
+  direction: rtl;
+  text-align: left;
+}
+
 .input-icon span:first-of-type {
   right: 10px;
 }
@@ -163,6 +168,10 @@ h1 {
 }
 .up {
   left: 20px;
+}
+
+.ck.ck-content.ck-editor__editable {
+  text-align: left;
 }
 
 /*# sourceMappingURL=english.css.map */

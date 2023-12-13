@@ -21,62 +21,9 @@
        <div class="container">
          <h2 class="big text-center">{{ $parent.$attrs.words.home.service_title }}</h2>
          <p class="gray text-center mb-4">{{ $parent.$attrs.words.home.service_content }}</p>
-
-         <div class="row align-items-center mb-4">
-           <div class="col-lg-6 col-12">
-             <div class="content">
-               <h2 class="fw-bold mb-3">خدمة تصميم  المواقع</h2>
-               <p class="gray">محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع </p>
-             </div>
-           </div>
-           <div class="col-lg-6 col-12">
-             <div class="images">
-               <div class="row align-item-center">
-                 <div class="col-6">
-                   <div class="image h-100">
-                     <img style="max-width: 100%" class="h-100" src="/images/companies/1.png">
-                   </div>
-                 </div>
-                 <div class="col-6">
-                   <div class="image mb-4">
-                     <img class="w-100" src="/images/companies/1.png">
-                   </div>
-                   <div class="image">
-                     <img class="w-100" src="/images/companies/1.png">
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-         <div class="row align-items-center">
-           <div class="col-lg-6 col-12">
-             <div class="content">
-               <p class="fw-bold">خدمة تصميم  المواقع</p>
-               <p class="gray">محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع محتوي خدمه تصميم المواقع </p>
-             </div>
-           </div>
-           <div class="col-lg-6 col-12">
-             <div class="images">
-               <div class="row align-item-center">
-                 <div class="col-6">
-                   <div class="image h-100">
-                     <img style="max-width: 100%" class="h-100" src="/images/companies/1.png">
-                   </div>
-                 </div>
-                 <div class="col-6">
-                   <div class="image mb-4">
-                     <img class="w-100" src="/images/companies/1.png">
-                   </div>
-                   <div class="image">
-                     <img class="w-100" src="/images/companies/1.png">
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-
+         <ServiceComponent :words="$parent.$attrs.words.home"
+                           v-for="(i,index) in all_services"
+                           :key="index" :service="i"></ServiceComponent>
        </div>
      </section>
      <!-------------------end of services section--------------------------- -->
@@ -85,13 +32,15 @@
 
 <script>
 import InfiniteScroll from "../mixins/InfiniteScroll";
+import ImageComponent from '../components/ImageComponent'
 import {mapGetters,mapActions} from 'vuex';
 import Job_info_filters_box from "../components/Modals/job_info_filters_box";
 import filters_jobs_search from "../mixins/filters_jobs_search";
+import ServiceComponent from "../components/ServiceComponent";
 
 export default {
   name: 'index',
-  components: {Job_info_filters_box},
+  components: {Job_info_filters_box,ImageComponent,ServiceComponent},
   mixins:[InfiniteScroll,filters_jobs_search],
   data(){
     return {
@@ -134,8 +83,7 @@ export default {
 
   computed:{
     ...mapGetters({
-      'jobs_data':'jobs/getData',
-      'getTotal':'jobs/getTotal'
+      'all_services':'services/getData'
     })
   },
 }
@@ -176,18 +124,5 @@ export default {
 }
 .services{
   margin-top: 100px;
-  .container{
-    >div:nth-child(even){
-      direction: rtl;
-    }
-  }
-  .images{
-    .image{
-      img{
-        border-radius: 10px;
-        object-fit: contain
-      }
-    }
-  }
 }
 </style>

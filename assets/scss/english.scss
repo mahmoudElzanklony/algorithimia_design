@@ -9,6 +9,15 @@
 }*/
 // edit bootstrap---------
 
+// services page
+.services {
+  .container {
+    > div:nth-child(even) {
+      direction: rtl;
+      text-align: left;
+    }
+  }
+}
 // public class-----------------------
 .input-icon{
   span:first-of-type{

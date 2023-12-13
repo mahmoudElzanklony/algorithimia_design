@@ -2,6 +2,17 @@
   direction: rtl;
 }
 
+
+// services page
+.services {
+  .container {
+    > div:nth-child(even) {
+      direction: ltr;
+      text-align: right;
+    }
+  }
+}
+
 // public class-----------------------
 .input-icon{
   span:first-of-type{
