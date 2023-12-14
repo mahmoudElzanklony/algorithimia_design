@@ -53,6 +53,17 @@ nav{
 }
 
 // edit bootstrap-----------------------
+// start of projects-----------------------
+.projects{
+  .inner_projects{
+    .row{
+      >div{
+        padding: 0px;
+      }
+    }
+  }
+}
+// end of projects-----------------------
 
 // public classes----------------------------------
 h1,h2,h3,p,span{

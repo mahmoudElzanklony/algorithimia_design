@@ -66,6 +66,14 @@ $(document).ready(function (){
     }
   });
 
+  // toggle between small images
+  $('#__nuxt').on('click','.images .small img',function () {
+     var src = $(this).attr('src');
+     $(this).parent().parent().find('.image img').attr('src',src);
+     if($(this).parent().parent().find('a').length > 0){
+       $(this).parent().parent().find('a').attr('href',src)
+     }
+  });
 
   // control show hide parent element
   $('#__nuxt').on('click','.section-title-control span:last-of-type',function (){

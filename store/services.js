@@ -24,9 +24,9 @@ export const mutations = {
 }
 
 export const actions = {
-  async allDataAction({ state,commit},payload = []) {
+  async allDataAction({ state,commit},payload = '') {
     commit('loader/updateLoaderMutation',true,{root:true});
-    return this.$axios.get('services', payload).then((e) => {
+    return this.$axios.get('services'+payload).then((e) => {
       commit('InitializeData', e.data.data);
     }).finally(() => {
       commit('loader/updateLoaderMutation', false, {root: true});

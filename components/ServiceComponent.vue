@@ -4,7 +4,7 @@
       <div class="content">
         <h2 class="fw-bold mb-3">{{ service['name'] }}</h2>
         <p class="gray">{{ service['info'] }}</p>
-        <a target="_blank" href="#" class="btn btn-outline-primary">{{ words.service_projects_visit }}</a>
+        <a target="_blank" :href="'/projects?service_id='+service['id']" class="btn btn-outline-primary">{{ words.service_projects_visit }}</a>
       </div>
     </div>
     <div class="col-lg-7 col-12">

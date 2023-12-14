@@ -24,6 +24,7 @@ export default {
     ],
     script:[
       {src:'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js'},
+      {src:'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js'},
       {src:'https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js'},
       {src:'https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js'},
       {src:'https://www.google.com/recaptcha/api.js'},

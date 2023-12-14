@@ -1,6 +1,7 @@
 
 export const state = () => ({
   data: [],
+  item:{},
   status:true
 })
 
@@ -8,11 +9,17 @@ export const getters = {
   getData(state) {
     return state.data
   },
+  getItem(state) {
+    return state.item
+  },
 }
 
 export const mutations = {
   InitializeData(state,payload){
     state.data = payload;
+  },
+  InitializeItem(state,payload){
+    state.item = payload;
   },
   UpdateData(state,payload){
     if(payload.length > 0 ) {
@@ -26,8 +33,16 @@ export const mutations = {
 export const actions = {
   async allDataAction({ state,commit},payload = []) {
     commit('loader/updateLoaderMutation',true,{root:true});
-    return this.$axios.get('categories', payload).then((e) => {
+    return await this.$axios.get('categories', payload).then((e) => {
       commit('InitializeData', e.data.data);
+    }).finally(() => {
+      commit('loader/updateLoaderMutation', false, {root: true});
+    });
+  },
+  async specificItemAction({ state,commit},payload = '') {
+    commit('loader/updateLoaderMutation',true,{root:true});
+    return this.$axios.get('categories/'+payload).then((e) => {
+      commit('InitializeItem', e.data.data);
     }).finally(() => {
       commit('loader/updateLoaderMutation', false, {root: true});
     });

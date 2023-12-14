@@ -9,6 +9,7 @@ export default {
   navbar:{
     home:'Home',
     about:'About',
+    categories:'Categories',
     posts:'Posts',
     jobs:'Jobs',
     register:'Register',
@@ -74,6 +75,54 @@ export default {
     service_projects_visit:'See projects related to this service',
     projects_title:'Algorithimia Projects',
     projects_content:'You can browse all the projects related to Gorismia by moving between the project sections and clicking on any project you like to see more details.',
+    all_projects:'Show all projects',
+    all_services:'Show all services',
+    team:[
+      {
+        image:'ibrahem.PNG',
+        name:'Ibrahim mustafa',
+        content:'Project manager working on supervising projects and ensure all projects delivered before deadline',
+      },
+      {
+        image:'mahmoud.jpg',
+        name:'Mahmoud elzanklony',
+        content:'Technical lead working on projects from a to z has an experience in front end ,back end , database , servers , api',
+      },
+      {
+        image:'shehab.PNG',
+        name:'Shehab mohamed',
+        content:'Mid level flutter developer have experience at design , api , firebase , upload app info apple store , google play',
+      },
+      {
+        image:'ayman.jpg',
+        name:'Ahmed ayman',
+        content:'Mid level Node js developer have experience at backend , database , debuging code , uploading into servers',
+      },
+    ],
+    team_title:'Algorithimia developers',
+    team_content:'Algorismia has a team with the highest level of experience in the field of design and programming, so if you have any questions, do not hesitate to contact us.',
+    statistics:[
+      {
+        icon:'bi bi-people',
+        name:'Clients number',
+        value:30
+      },
+      {
+        icon:'bi bi-briefcase',
+        name:'Projects number',
+        value:70
+      },
+      {
+        icon:'bi bi-alarm',
+        name:'Working hours for projects',
+        value:1300
+      },
+      {
+        icon:'bi bi-headset',
+        name:'Support',
+        value:'24/7'
+      },
+    ]
 
   },
   /*===============================end of home page==========================================*/
@@ -135,5 +184,6 @@ export default {
     are_you_sure_from_delete:'Are you sure from delete process',
     confirm:'Yes confirm',
     all:'All',
+    in:'in',
   }
 }

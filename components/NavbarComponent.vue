@@ -15,6 +15,14 @@
           <li class="nav-item link mrl-1">
             <nuxt-link to="/about-us" class="nav-link line-hover" href="/about-us">{{ $attrs.words.navbar.about }}</nuxt-link>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ $attrs.words.navbar.categories }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" :href="'/projects?category_id='+i['id']" v-for="(i,index) in all_categories" :key="index">{{ i['name'] }}</a></li>
+            </ul>
+          </li>
 
           <li class="nav-item link mrl-1"
               v-if="false && $auth.loggedIn && $auth.$state.user.hasOwnProperty('role') && $auth.$state.user.role.name == 'admin'">
@@ -98,7 +106,8 @@ export default {
   },
   computed:{
     ...mapGetters({
-      'auth_check':'auth/login/get_auth_user_validation'
+      'auth_check':'auth/login/get_auth_user_validation',
+      'all_categories':'categories/getData',
     }),
     shouldShowRegisterLink() {
       return !this.$store.state.auth.loggedIn
@@ -107,6 +116,7 @@ export default {
   methods:{
     ...mapActions({
       'logoutAction':'auth/login/logoutAction',
+      'all_categories_action':'categories/allDataAction',
     }),
     updateRegisterLinkVisibility() {
       this.showRegisterLink = !this.$store.state.auth.loggedIn
@@ -124,7 +134,10 @@ export default {
       window.location = document.URL;
     },
   },
-  mounted() {
+  async mounted() {
+    if(this.all_categories.length == 0) {
+      await this.all_categories_action()
+    }
     this.updateRegisterLinkVisibility()
     this.$store.subscribe(this.updateRegisterLinkVisibility)
     if(sessionStorage.hasOwnProperty('authenticated')){
