@@ -27,20 +27,45 @@
        </div>
      </section>
      <!-------------------end of services section--------------------------- -->
+
+     <!-------------------start of projects section--------------------------- -->
+     <section class="projects">
+       <div class="container">
+         <h2 class="big text-center">{{ $parent.$attrs.words.home.projects_title }}</h2>
+         <p class="gray text-center">{{ $parent.$attrs.words.home.projects_content }}</p>
+         <ul class="d-flex justify-content-between flex-wrap">
+           <li class="mx-1">
+             <button class="btn btn-primary">{{ $parent.$attrs.words.general.all }}</button>
+           </li>
+           <li class="cursor-pointer mx-1 mb-2" v-for="(i,key) in all_categories" :key="key">
+             <button class="btn btn-outline-primary">{{ i['name'] }}</button>
+           </li>
+         </ul>
+         <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12" v-for="(i,key) in all_projects" :key="key">
+               <div>
+                 <ImageComponent v-if="i['images'].length > 0" :src="i['images'][0]['image']"></ImageComponent>
+               </div>
+            </div>
+         </div>
+       </div>
+     </section>
+     <!-------------------end of projects section--------------------------- -->
+
    </div>
 </template>
 
 <script>
 import InfiniteScroll from "../mixins/InfiniteScroll";
-import ImageComponent from '../components/ImageComponent'
 import {mapGetters,mapActions} from 'vuex';
 import Job_info_filters_box from "../components/Modals/job_info_filters_box";
 import filters_jobs_search from "../mixins/filters_jobs_search";
 import ServiceComponent from "../components/ServiceComponent";
+import ImageComponent from "../components/ImageComponent";
 
 export default {
   name: 'index',
-  components: {Job_info_filters_box,ImageComponent,ServiceComponent},
+  components: {Job_info_filters_box,ServiceComponent,ImageComponent},
   mixins:[InfiniteScroll,filters_jobs_search],
   data(){
     return {
@@ -55,10 +80,14 @@ export default {
   methods:{
     ...mapActions({
       'all_services_action':'services/allDataAction',
+      'all_categories_action':'categories/allDataAction',
+      'all_projects_action':'projects/allDataAction',
     }),
   },
   mounted() {
     this.all_services_action();
+    this.all_categories_action();
+    this.all_projects_action();
     this.lang = localStorage.getItem('lang');
   },
   head() {
@@ -83,7 +112,9 @@ export default {
 
   computed:{
     ...mapGetters({
-      'all_services':'services/getData'
+      'all_services':'services/getData',
+      'all_categories':'categories/getData',
+      'all_projects':'projects/getData',
     })
   },
 }
@@ -106,9 +137,9 @@ export default {
         background-color: white;
         align-items: center;
         justify-content: center;
-        border: 1px solid $main_color;
+        border: 1px solid $sky;
         border-radius: 5px;
-        color:$main_color;
+        color:$sky;
         transition: 0.5s all;
       }
     }
@@ -116,7 +147,7 @@ export default {
       top:-10px;
       box-shadow: 0px 0px 5px 0px #ddd;
       p:first-of-type > span{
-        background-color: $main_color;
+        background-color: $sky;
         color:white;
       }
     }

@@ -5,7 +5,7 @@
     <img class="d-block m-auto" src="/images/home/hero.svg">
     <p class="fw-bold mt-5 big w-100">
       <span>{{ $attrs.words.header.welcome_to }}</span>
-      <span class="main-color">{{ $attrs.words.header.company_name }}</span>
+      <span class="sky">{{ $attrs.words.header.company_name }}</span>
     </p>
     <p class="gray">{{ $attrs.words.header.company_quick_info }}</p>
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#company_video">
@@ -58,6 +58,7 @@ header{
   padding-top: 75px;
   img{
     height: 500px;
+    max-width: 100%;
     padding-top: 50px;
     position: relative;
     transition: 1s all;

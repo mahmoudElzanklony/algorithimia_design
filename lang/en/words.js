@@ -72,6 +72,8 @@ export default {
     service_title:'What are Algorithimia services?',
     service_content:'What Algorismia can provide you with are many services. If you have any questions or want to subscribe to any of these services, please contact us.',
     service_projects_visit:'See projects related to this service',
+    projects_title:'Algorithimia Projects',
+    projects_content:'You can browse all the projects related to Gorismia by moving between the project sections and clicking on any project you like to see more details.',
 
   },
   /*===============================end of home page==========================================*/
@@ -132,5 +134,6 @@ export default {
     close:'Close',
     are_you_sure_from_delete:'Are you sure from delete process',
     confirm:'Yes confirm',
+    all:'All',
   }
 }
