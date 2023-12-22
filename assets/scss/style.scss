@@ -132,6 +132,12 @@ label{
 .white{
   color:white !important;
 }
+@media (max-width: 992px) {
+  .hidden_in_mob{
+    display: none;
+  }
+}
+
 .line-height-22{
   line-height: 22px;
 }

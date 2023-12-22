@@ -81,8 +81,8 @@
          <h2 class="big text-center">{{ $parent.$attrs.words.home.team_title }}</h2>
          <p class="gray text-center">{{ $parent.$attrs.words.home.team_content }}</p>
          <div class="row">
-           <div class="col-lg-3 col-md-6 col-12 mb-2" v-for="(i,key) in $parent.$attrs.words.home.team">
-             <div :class="'member '+(key % 2 == 0 ?'space-top':'')">
+           <div :class="'col-lg-3 col-md-6 col-12 mb-2 '+(i['name'] == ''?' hidden_in_mob':'')" v-for="(i,key) in $parent.$attrs.words.home.team">
+             <div :class="'member '+(key % 2 == 0 ?'space-top':'') +(key == 5 || key == 7 ? ' big-top':'')" v-if="i['name'] != ''">
                <img :src="'/images/team/'+i['image']">
                <div class="info">
                  <p class="mb-0 fw-bold">{{ i['name'] }}</p>
@@ -93,7 +93,16 @@
          </div>
        </div>
      </section>
+
      <!-------------------end of team section--------------------------- -->
+
+     <!-------------------start of visual resource--------------------------- -->
+     <section class="visual_resources">
+       <div class="container">
+
+       </div>
+     </section>
+     <!-------------------end of visual resource--------------------------- -->
 
    </div>
 </template>
@@ -230,6 +239,7 @@ export default {
       height: 400px;
       width: 100%;
       object-fit: cover;
+      object-position: center;
     }
     .info{
       padding: 10px;
@@ -238,13 +248,18 @@ export default {
       left: 4%;
       border-radius: 6px;
       background-color: white;
-      bottom: -140px;
+      bottom: -200px;
       transition: 0.5s all;
     }
     &:hover{
       .info{
         bottom: 8px;
       }
+    }
+  }
+  @media (min-width: 1000px) {
+    .big-top{
+      margin-top: -80px;
     }
   }
 }

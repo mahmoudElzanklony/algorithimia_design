@@ -98,6 +98,26 @@ export default {
         name:'Ahmed ayman',
         content:'Mid level Node js developer have experience at backend , database , debuging code , uploading into servers',
       },
+      {
+        image:'',
+        name:'',
+        content:'',
+      },
+      {
+        image:'abdo.jpg',
+        name:'Abdelrhman sada',
+        content:'Mid level Node js developer have experience at backend , database , debuging code , uploading into servers',
+      },
+      {
+        image:'',
+        name:'',
+        content:'',
+      },
+      {
+        image:'eman.jpg',
+        name:'Eman ahmed',
+        content:'Junior front end developer and handle design in all screens to make it response and have good knowledge in api',
+      },
     ],
     team_title:'Algorithimia developers',
     team_content:'Algorismia has a team with the highest level of experience in the field of design and programming, so if you have any questions, do not hesitate to contact us.',
@@ -122,7 +142,11 @@ export default {
         name:'Support',
         value:'24/7'
       },
-    ]
+    ],
+    visual_resources: {
+      main_title:'Hire Top 1% of Tech Talent in Algorithimia',
+      main_content:'Work with our talented pool of developers to scale your business faster. We provide end-to-end solutions with full-time, offshore employees',
+    }
 
   },
   /*===============================end of home page==========================================*/

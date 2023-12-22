@@ -2,7 +2,7 @@
   <div>
       <navbar-component  :words="words"></navbar-component>
       <HeaderComponent class="mb-5" :words="words"></HeaderComponent>
-      <nuxt  :words="words"/>
+      <nuxt  :words="words" :error="networkError"/>
       <span class="up"><i class="bi bi-arrow-up"></i></span>
       <loader v-if="loader_status" :color="'#0a58ca'" size="60px"></loader>
       <footer-component :words="words"></footer-component>
@@ -26,7 +26,18 @@ export default {
     ...mapGetters({
       'loader_status':'loader/getLoaderGetter',
       'auth_check_getter':'auth/login/get_auth_user_validation'
-    })
+    }),
+    networkError() {
+      return this.$store.state.networkError;
+    },
+  },
+  errorCaptured(error, vm, info){
+    if (error.request && error.request.status >= 400) {
+      // Handle network errors specifically
+      this.$store.commit('setNetworkError', error);
+      return false;
+      // Display a user-friendly message or perform other actions
+    }
   },
   methods:{
     ...mapActions({
