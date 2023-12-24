@@ -1,110 +1,122 @@
 <template>
-   <div class="main-page" v-if="Object.keys($parent.$attrs).length > 0  &&  Object.keys($parent.$attrs.words).length > 0">
-     <section class="features mt-5 mb-5">
-       <div class="container">
-         <h2 class="big text-center">{{ $parent.$attrs.words.home.features_title }}</h2>
-         <p class="gray text-center mb-4">{{ $parent.$attrs.words.home.features_content }}</p>
-         <div class="row justify-content-center">
-           <div class="col-lg-3 col-md-6 col-12 mb-2" v-for="(i,key) in $parent.$attrs.words.home.features">
-             <div class="feature">
-               <p class="mb-1"><span><i :class="i['icon']"></i></span></p>
-               <p class="mb-0 fw-bold">{{ i['title'] }}</p>
-               <p class="gray">{{ i['content'] }}</p>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
 
-     <!-------------------start of services section--------------------------- -->
-     <section class="services mb-5">
-       <div class="container">
-         <h2 class="big text-center">{{ $parent.$attrs.words.home.service_title }}</h2>
-         <p class="gray text-center mb-4">{{ $parent.$attrs.words.home.service_content }}</p>
-         <ServiceComponent :words="$parent.$attrs.words.home"
-                           v-for="(i,index) in all_services"
-                           :key="index" :service="i"></ServiceComponent>
-       </div>
-       <nuxt-link to="/services" class="d-block white btn btn-primary" style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_services }}</nuxt-link>
-     </section>
-     <!-------------------end of services section--------------------------- -->
+    <div class="main-page" >
 
-     <!-------------------start of projects section--------------------------- -->
-     <section class="projects">
-       <div class="container">
-         <h2 class="big text-center">{{ $parent.$attrs.words.home.projects_title }}</h2>
-         <p class="gray text-center">{{ $parent.$attrs.words.home.projects_content }}</p>
-         <ul class="d-flex justify-content-between flex-wrap">
-           <li class="mx-1" >
-             <button @click="check_active(0)" class="btn btn-primary">{{ $parent.$attrs.words.general.all }}</button>
-           </li>
-           <li class="cursor-pointer mx-1 mb-2" v-for="(i,key) in all_categories" :key="key" >
-             <button @click="check_active(i['id'])" class="btn btn-outline-primary">{{ i['name'] }}</button>
-           </li>
-         </ul>
-       </div>
-       <div class="inner_projects">
-         <div class="row">
-           <div class="col-lg-3 col-md-4 col-sm-6 col-12" v-for="(i,key) in all_projects_data" :key="key">
-             <ProjectInfoComponent :data="i" :words="$parent.$attrs.words.home"></ProjectInfoComponent>
+      <HeaderComponent  class="mb-5" :words="$parent.$attrs.words"></HeaderComponent>
 
-           </div>
-         </div>
-         <nuxt-link to="/projects" class="d-block white btn btn-primary" style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_projects }}</nuxt-link>
-       </div>
-       <ProjectDetailsPopUpComponent :data="selected_project" :close_word="$parent.$attrs.words.general.close"></ProjectDetailsPopUpComponent>
-     </section>
-     <!-------------------end of projects section--------------------------- -->
 
-     <!-------------------start of statistics section--------------------------- -->
-     <section class="statistics">
-       <div class="layer d-flex align-items-center">
-         <div class="container">
-           <div class="row">
-             <div class="col-lg-3 col-md-6 col-12 mb-2" v-for="(i,key) in $parent.$attrs.words.home.statistics" :key="key">
-               <div class="box text-center">
-                 <p class="mb-0"><span><i :class="i['icon']"></i></span></p>
-                 <p class="mb-0">{{ i['name'] }}</p>
-                 <p>{{ i['value'] }}</p>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
-     <!-------------------end of statistics section--------------------------- -->
 
-     <!-------------------start of team section--------------------------- -->
+      <section class="features mt-5 mb-5" >
+        <div class="container">
+          <h2 class="big text-center">{{ $parent.$attrs.words.home.features_title }}</h2>
+          <p class="gray text-center mb-4">{{ $parent.$attrs.words.home.features_content }}</p>
+          <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6 col-12 mb-2" v-for="(i,key) in $parent.$attrs.words.home.features">
+              <div class="feature">
+                <p class="mb-1"><span><i :class="i['icon']"></i></span></p>
+                <p class="mb-0 fw-bold">{{ i['title'] }}</p>
+                <p class="gray">{{ i['content'] }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-     <section class="team">
-       <div class="container">
-         <h2 class="big text-center">{{ $parent.$attrs.words.home.team_title }}</h2>
-         <p class="gray text-center">{{ $parent.$attrs.words.home.team_content }}</p>
-         <div class="row">
-           <div :class="'col-lg-3 col-md-6 col-12 mb-2 '+(i['name'] == ''?' hidden_in_mob':'')" v-for="(i,key) in $parent.$attrs.words.home.team">
-             <div :class="'member '+(key % 2 == 0 ?'space-top':'') +(key == 5 || key == 7 ? ' big-top':'')" v-if="i['name'] != ''">
-               <img :src="'/images/team/'+i['image']">
-               <div class="info">
-                 <p class="mb-0 fw-bold">{{ i['name'] }}</p>
-                 <p class="gray small">{{ i['content'] }}</p>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
+      <!-------------------start of services section--------------------------- -->
+      <section class="services mb-5">
+        <div class="container">
+          <h2 class="big text-center" >{{ $parent.$attrs.words.home.service_title }}</h2>
+          <p class="gray text-center mb-4" >{{ $parent.$attrs.words.home.service_content }}</p>
+          <ServiceComponent :words="$parent.$attrs.words.home"
+                            v-for="(i,index) in all_services"
+                            :key="index" :service="i"></ServiceComponent>
+        </div>
+        <nuxt-link to="/services" class="d-block white btn btn-primary"
 
-     <!-------------------end of team section--------------------------- -->
+                   style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_services }}</nuxt-link>
+      </section>
+      <!-------------------end of services section--------------------------- -->
 
-     <!-------------------start of visual resource--------------------------- -->
-     <section class="visual_resources">
-       <div class="container">
+      <!-------------------start of projects section--------------------------- -->
+      <section class="projects">
+        <div class="container">
+          <h2 class="big text-center" >{{ $parent.$attrs.words.home.projects_title }}</h2>
+          <p class="gray text-center" >{{ $parent.$attrs.words.home.projects_content }}</p>
+          <ul class="d-flex justify-content-between flex-wrap">
+            <li class="mx-1" >
+              <button @click="check_active(0)" class="btn btn-primary">{{ $parent.$attrs.words.general.all }}</button>
+            </li>
+            <li class="cursor-pointer mx-1 mb-2" v-for="(i,key) in all_categories" :key="key" >
+              <button @click="check_active(i['id'])" class="btn btn-outline-primary">{{ i['name'] }}</button>
+            </li>
+          </ul>
+        </div>
+        <div class="inner_projects">
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12" v-for="(i,key) in all_projects_data" :key="key">
+              <ProjectInfoComponent :data="i" :words="$parent.$attrs.words.home"></ProjectInfoComponent>
 
-       </div>
-     </section>
-     <!-------------------end of visual resource--------------------------- -->
+            </div>
+          </div>
+          <nuxt-link to="/projects" class="d-block white btn btn-primary" style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_projects }}</nuxt-link>
+        </div>
+        <ProjectDetailsPopUpComponent :data="selected_project" :close_word="$parent.$attrs.words.general.close"></ProjectDetailsPopUpComponent>
+      </section>
+      <!-------------------end of projects section--------------------------- -->
 
-   </div>
+      <!-------------------start of statistics section--------------------------- -->
+      <section class="statistics">
+        <div class="layer d-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-12 mb-2" v-for="(i,key) in $parent.$attrs.words.home.statistics" :key="key">
+                <div class="box text-center">
+                  <p class="mb-0"><span><i :class="i['icon']"></i></span></p>
+                  <p class="mb-0">{{ i['name'] }}</p>
+                  <p>{{ i['value'] }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-------------------end of statistics section--------------------------- -->
+
+      <!-------------------start of team section--------------------------- -->
+
+      <section class="team">
+        <div class="container">
+          <h2 class="big text-center">{{ $parent.$attrs.words.home.team_title }}</h2>
+          <p class="gray text-center">{{ $parent.$attrs.words.home.team_content }}</p>
+          <div class="row">
+            <div :class="'col-lg-3 col-md-6 col-12 mb-2 '+(i['name'] == ''?' hidden_in_mob':'')" v-for="(i,key) in $parent.$attrs.words.home.team">
+              <div :class="'member '+(key % 2 == 0 ?'space-top':'') +(key == 5 || key == 7 ? ' big-top':'')" v-if="i['name'] != ''">
+                <img :src="'/images/team/'+i['image']">
+                <div class="info">
+                  <p class="mb-0 fw-bold">{{ i['name'] }}</p>
+                  <p class="gray small">{{ i['content'] }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-------------------end of team section--------------------------- -->
+
+      <!-------------------start of visual resource--------------------------- -->
+      <VisualResourceComponent :words="$parent.$attrs.words"></VisualResourceComponent>
+      <!-------------------end of visual resource--------------------------- -->
+
+
+      <!-------------------start  of Most recently questions--------------------------- -->
+      <section class="recent_questions">
+        <div class="container">
+
+        </div>
+      </section>
+    </div>
+      <!-------------------end  of Most recently questions--------------------------- -->
 </template>
 
 <script>
@@ -114,16 +126,24 @@ import Job_info_filters_box from "../components/Modals/job_info_filters_box";
 import filters_jobs_search from "../mixins/filters_jobs_search";
 import ServiceComponent from "../components/ServiceComponent";
 import ProjectInfoComponent from "../components/ProjectInfoComponent";
+import HeaderComponent from "../components/HeaderComponent";
+
 import ImageComponent from "../components/ImageComponent";
 import ProjectDetailsPopUpComponent from "../components/ProjectDetailsPopUpComponent";
+import VisualResourceComponent from "../components/VisualResourceComponent";
 
 export default {
   name: 'index',
-  components: {Job_info_filters_box,ServiceComponent,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent},
+  components: {Job_info_filters_box,ServiceComponent,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent,VisualResourceComponent,HeaderComponent},
   mixins:[InfiniteScroll,filters_jobs_search],
+  fetch(){
+    return this.$store.dispatch('services/allDataAction', '?limit=4');
+
+  },
   data(){
     return {
       data: [],
+
       lang:'',
       selected_cat_id:0,
       meta:{
@@ -145,9 +165,9 @@ export default {
     }
   },
   mounted() {
-    this.all_services_action('?limit=4');
+   // this.all_services_action('?limit=4');
     if(this.all_categories.length == 0) {
-      this.all_categories_action()
+       this.all_categories_action()
     }
     this.all_projects_action('?limit=12');
     this.lang = localStorage.getItem('lang');
@@ -285,7 +305,13 @@ export default {
       color:white;
     }
   }
+  @media (max-width: 992px) {
+     &{
+       height: max-content;
+     }
+  }
 }
+
 @media(min-width: 1000px){
   .space-top{
     margin-top: 100px;

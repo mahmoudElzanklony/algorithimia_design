@@ -1,11 +1,13 @@
 <template>
   <div>
-      <navbar-component  :words="words"></navbar-component>
-      <HeaderComponent class="mb-5" :words="words"></HeaderComponent>
-      <nuxt  :words="words" :error="networkError"/>
+      <navbar-component  :words="words_data"></navbar-component>
+
+      <DotsComponent></DotsComponent>
+      <nuxt  :words="words_data" :error="networkError"/>
       <span class="up"><i class="bi bi-arrow-up"></i></span>
       <loader v-if="loader_status" :color="'#0a58ca'" size="60px"></loader>
-      <footer-component :words="words"></footer-component>
+      <ask-service-component :words="words_data.ask_service"></ask-service-component>
+      <footer-component :words="words_data"></footer-component>
 
 
   </div>
@@ -15,23 +17,35 @@
 
 import WordsLang from "../mixins/WordsLang";
 import NavbarComponent from "../components/NavbarComponent";
-import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "../components/FooterComponent";
 import text_editor from "../mixins/text_editor";
+
 import {mapGetters,mapActions} from 'vuex';
+import AskServiceComponent from "@/components/Modals/AskServiceComponent.vue";
+import DotsComponent from "../components/DotsComponent.vue";
+
 export default {
   name: "default",
   mixins:[text_editor,WordsLang],
+  data(){
+    return {
+
+    }
+  },
+  components: {AskServiceComponent, NavbarComponent,FooterComponent,DotsComponent},
+
   computed:{
     ...mapGetters({
       'loader_status':'loader/getLoaderGetter',
-      'auth_check_getter':'auth/login/get_auth_user_validation'
+      'auth_check_getter':'auth/login/get_auth_user_validation',
+      'words_data':'words_data_lang/getData'
     }),
     networkError() {
       return this.$store.state.networkError;
     },
   },
   errorCaptured(error, vm, info){
+    // return false
     if (error.request && error.request.status >= 400) {
       // Handle network errors specifically
       this.$store.commit('setNetworkError', error);
@@ -50,7 +64,6 @@ export default {
     }*/
 
   },
-  components: {NavbarComponent,HeaderComponent,FooterComponent}
 }
 </script>
 

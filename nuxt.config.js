@@ -19,7 +19,6 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' },
       { rel: 'stylesheet',  href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css' },
-      { rel: 'stylesheet',  href: 'assets/vendor/bootstrap/css/bootstrap.min.css' },
     //  { rel: 'stylesheet',class:'ar_external_style',  href: '/css/arabic.css' },
     ],
     script:[
@@ -49,6 +48,7 @@ export default {
   plugins: [
     {src:'~/plugins/jquery_plugin',mode:'client'},
     {src:'~/plugins/sweet_alert',mode:'client'},
+    {src:'~/plugins/dots',mode:'client'},
    // {src:'~/plugins/text_editor',mode:'client'},
     {src:'~/plugins/tooltip_plugin',mode:'client'},
     {src:'~/plugins/axios'},

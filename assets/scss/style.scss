@@ -3,6 +3,11 @@
 @import "variables";
 @import "tooplit";
 
+// start of dots style
+#particles-js + div{
+  margin-top: 77px;
+}
+// end of dots style
 
 // edit bootstrap-----------------------
 .btn-primary{
@@ -29,6 +34,17 @@
     box-shadow: none !important;
   }
 }
+.btn-outline-white{
+  border-color: white;
+  color:white;
+  &:hover,&:focus,&:active{
+    background-color: white;
+    color:$black !important;
+    border-color: white;
+    box-shadow: none !important;
+  }
+}
+
 a{
   color:$main_color !important;
 }
@@ -69,6 +85,9 @@ nav{
 h1,h2,h3,p,span{
   color:$black
 }
+h1,h2{
+  font-weight: bold;
+}
 .current_page{
   margin-top: 105px !important;
 }
@@ -82,7 +101,7 @@ label{
   font-size: $semi_big !important;
 }
 .big{
-  font-size: $big;
+  font-size: $big !important;
 }
 .small{
   font-size: $button !important;

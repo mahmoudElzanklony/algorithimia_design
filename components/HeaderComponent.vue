@@ -1,17 +1,27 @@
 <template>
 
-  <header class="text-center"
+  <header
           v-if="Object.keys($attrs).length > 0  &&  Object.keys($attrs.words).length > 0">
-    <img class="d-block m-auto" src="/images/home/hero.svg">
-    <p class="fw-bold mt-5 big w-100">
-      <span>{{ $attrs.words.header.welcome_to }}</span>
-      <span class="sky">{{ $attrs.words.header.company_name }}</span>
-    </p>
-    <p class="gray">{{ $attrs.words.header.company_quick_info }}</p>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#company_video">
-      <span><i class="bi bi-play-circle"></i></span>
-      <span class="mx-1">{{ $attrs.words.header.watch_video }}</span>
-    </button>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 col-12 mb-2">
+          <p class="fw-bold big w-100">
+            <span>{{ $attrs.words.header.welcome_to }}</span>
+            <span class="sky">{{ $attrs.words.header.company_name }}</span>
+          </p>
+          <p class="gray">{{ $attrs.words.header.company_quick_info }}</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#company_video">
+            <span><i class="bi bi-play-circle"></i></span>
+            <span class="mx-1">{{ $attrs.words.header.watch_video }}</span>
+          </button>
+        </div>
+        <div class="col-md-6 col-12 mb-2">
+          <img class="d-block m-auto" src="/images/home/header.gif">
+        </div>
+      </div>
+    </div>
+
+
 
 
     <!-- Modal -->
@@ -52,14 +62,9 @@ export default {
 <style lang="scss">
 @import "~/assets/scss/variables";
 header{
-  background-image: url("/images/header_shape.png");
-  height: 900px;
-  background-position: center;
-  background-size: cover;
-  padding-top: 75px;
   img{
-    height: 500px;
     max-width: 100%;
+    width: 100%;
     padding-top: 50px;
     position: relative;
     transition: 1s all;

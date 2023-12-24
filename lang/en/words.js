@@ -2,7 +2,7 @@ export default {
   header:{
     welcome_to:'Welcome to',
     company_name:'Algorithimia',
-    company_quick_info:'A company specialized in programming websites and applications with design, marketing, and other services',
+    company_quick_info:'A company specialized in programming websites and applications with design, marketing, and other services. We have many clients in the Arab world. It has a branch in Saudi Arabia and Egypt. We also support entrepreneurs in building their own businesses and provide them with what is necessary for that.',
     watch_video:'See video',
     company_video:'marketing video of Algorithimia',
   },
@@ -91,12 +91,12 @@ export default {
       {
         image:'shehab.PNG',
         name:'Shehab mohamed',
-        content:'Mid level flutter developer have experience at design , api , firebase , upload app info apple store , google play',
+        content:'Senior flutter developer have experience at design , api , firebase , upload app info apple store , google play',
       },
       {
         image:'ayman.jpg',
         name:'Ahmed ayman',
-        content:'Mid level Node js developer have experience at backend , database , debuging code , uploading into servers',
+        content:'Senior Node js developer have experience at backend , database , debuging code , uploading into servers',
       },
       {
         image:'',
@@ -106,7 +106,7 @@ export default {
       {
         image:'abdo.jpg',
         name:'Abdelrhman sada',
-        content:'Mid level Node js developer have experience at backend , database , debuging code , uploading into servers',
+        content:'Senior Node js developer have experience at backend , database , debuging code , uploading into servers',
       },
       {
         image:'',
@@ -115,7 +115,7 @@ export default {
       },
       {
         image:'eman.jpg',
-        name:'Eman ahmed',
+        name:'Eman EL Swerky',
         content:'Junior front end developer and handle design in all screens to make it response and have good knowledge in api',
       },
     ],
@@ -146,11 +146,92 @@ export default {
     visual_resources: {
       main_title:'Hire Top 1% of Tech Talent in Algorithimia',
       main_content:'Work with our talented pool of developers to scale your business faster. We provide end-to-end solutions with full-time, offshore employees',
+      services:[
+        {
+          front_end:'Web design',
+          back_end:'Web develop',
+          web_security:'Web security',
+          servers:'Servers Security',
+        },
+        {
+          mobile_design:'Mobile app design',
+          mobile_develop:'Mobile app develop',
+          upload_google_play:'Upload app on store',
+          support:'App support',
+        },
+        {
+          graphics:'Graphics',
+          media_marketing:'Media marketing',
+          ui_ux:'UI and UX',
+          servers_packages:'Servers different plans',
+        }
+      ],
     }
 
   },
   /*===============================end of home page==========================================*/
 
+
+  /*===============================start of visual resources page==========================================*/
+  visual_resources: {
+    more_info:[
+      {
+        name:'Process',
+        number:"5 Days",
+        content:"Hiring",
+      },
+      {
+        name:'Talent',
+        number:"Top 1%",
+        content:"Vetted",
+      },
+      {
+        name:'Cost Advantage',
+        number:"Upto",
+        content:"70%",
+      },
+      {
+        name:'Availability',
+        number:"10+",
+        content:"Time Zones",
+      }
+    ],
+    title:'Algorithimia Best Pool of Developers',
+    content:'Explore the 350+ top, certified, and pre-vetted talent. We make the hiring process 10X faster & more efficient. Our software developers, web & app developers, website designers, digital marketing experts and big data experts will serve any needs you have!',
+    developers_tools:[
+      {
+        image:'frontend.png',
+        name:'Frontend developers',
+        skills:['html','css','bootstrap','tailwindcss','responsive','vue','nuxt','react','nest','api','animation']
+      },
+      {
+        image:'backend.png',
+        name:'Backend developers',
+        skills:['php','oop','algorithms','data structure','laravel','design pattern','node js','express','encryption','api']
+      },
+      {
+        image:'mobile.png',
+        name:'Mobile app developers',
+        skills:['dart','flutter','animation','api']
+      },
+      {
+        image:'database.png',
+        name:'Database developers',
+        skills:['mysql','managoDB','sql server']
+      },
+      {
+        image:'ui_ux.png',
+        name:'UI & UX designers',
+        skills:['adobe xd','figma']
+      },
+      {
+        image:'graphics.png',
+        name:'Graphics designers',
+        skills:['photoshop','illutstator']
+      }
+    ]
+  },
+  /*===============================end of visual resources page==========================================*/
 
 
   /*===============================start of auth pages==========================================*/
@@ -203,11 +284,30 @@ export default {
     select_best_section:"Select best section",
 
   },
+  ask_service: {
+    title:'Ask service',
+    close:'Close',
+    send:'Send',
+    inputs_labels:{
+      service_type:'Service type',
+      info:'Info about your required service',
+      info_file:'Upload file contains more info',
+    },
+    types:{
+      remote_employee:'Outsource employee',
+      build_website:'Build and develop website',
+      build_mobile_app:'Build and develop mobile app',
+      graphics:'Graphics',
+      marketing:'Marketing',
+    }
+  },
   general:{
     close:'Close',
     are_you_sure_from_delete:'Are you sure from delete process',
     confirm:'Yes confirm',
     all:'All',
     in:'in',
+    ask_this_service:'Ask services now',
+    see_more:'See more'
   }
 }

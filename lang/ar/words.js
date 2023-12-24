@@ -2,7 +2,7 @@ export default {
   header:{
     welcome_to:'مرحبا بك في ',
     company_name:'الجورزميا',
-    company_quick_info:'شركة متخصصه في برمجه المواقع و التطبيقات مع خدمات التصميم و التسويق و غيرها من الخدمات الاخري',
+    company_quick_info:'شركة متخصصه في برمجه المواقع و التطبيقات مع خدمات التصميم و التسويق و غيرها من الخدمات الاخري لدينا الكثير من العملاء في الوطن العربي لديها فرع في السعودية و مصر كما اننا ندعم رواد الاعمال في بناء اعمالهم الخاصه و نزود لهم ما يلزم لذلك',
     watch_video:'رؤيه الفديو',
     register:'تسجيل مستخدم جديد',
     company_video:'الفديو التسويقي الخاص بألجورزميا',
@@ -118,7 +118,7 @@ export default {
       },
       {
         image:'eman.jpg',
-        name:'Eman ahmed',
+        name:'ايمان السويركي',
         content:'جونيور في تصميم المواقع وجعلها متجاوبة علي جميع الشاشات مع التعامل مع ال API ',
       },
     ],
@@ -145,10 +145,95 @@ export default {
         name:'دعم فني',
         value:'24/7'
       },
-    ]
+    ],
+    visual_resources: {
+      main_title:'قم بتوظيف أفضل 1% من المواهب التقنية في الجورزميا',
+      main_content:'اعمل مع مجموعة المطورين الموهوبين لدينا لتوسيع نطاق أعمالك بشكل أسرع. نحن نقدم حلولاً شاملة مع موظفين خارجيين بدوام كامل',
+      services:[
+        {
+          front_end:'تصميم مواقع',
+          back_end:'برمجه مواقع',
+          web_security:'حماية المواقع',
+          servers:'حماية السيرفرات',
+        },
+        {
+          mobile_design:'تصميم تطبيقات الجوال',
+          mobile_develop:'برمجه تطبيقات الجوال',
+          upload_google_play:'الرفع علي متاجر التطبيقات',
+          support:'الدعم الفني',
+        },
+        {
+          graphics:'جرافيكس',
+          media_marketing:'فديوهات تسويقية',
+          ui_ux:'تصميم واجه و تجربة المستخدم',
+          servers_packages:'توفير باقات علي السيرفرات',
+        }
+      ],
+    }
   },
   /*===============================end of home page==========================================*/
 
+  /*===============================start of visual resources page==========================================*/
+  visual_resources: {
+    more_info:[
+      {
+        name:'معالجة',
+        number:"5 ايام",
+        content:"توظيف",
+      },
+      {
+        name:'موهبة',
+        number:"1%",
+        content:"اكتشاف",
+      },
+      {
+        name:'ميزة التكلفة',
+        number:"تصل الي",
+        content:"70%",
+      },
+      {
+        name:'التوفر',
+        number:"10+",
+        content:"المناطق الزمنية",
+      }
+    ],
+    title:'الجورزميا لديها أفضل مجموعة من المطورين',
+    content:'اكتشف أكثر من 350 من أفضل المواهب المعتمدة والمفحوصة مسبقًا. نحن نجعل عملية التوظيف أسرع وأكثر كفاءة 10 مرات. سيخدم مطورو البرامج ومطورو الويب والتطبيقات ومصممو مواقع الويب وخبراء التسويق الرقمي وخبراء البيانات الضخمة أي احتياجات لديك!',
+
+    developers_tools:[
+      {
+        image:'frontend.png',
+        name:'مطورين تصميم المواقع',
+        skills:['html','css','bootstrap','tailwindcss','responsive','vue','nuxt','react','nest','api','animation']
+      },
+      {
+        image:'backend.png',
+        name:'مطورين برمجة المواقع',
+        skills:['php','oop','algorithms','data structure','laravel','design pattern','node js','express','encryption','api']
+      },
+      {
+        image:'mobile.png',
+        name:'مطورين تطبيقات الجوال',
+        skills:['dart','flutter','animation','api']
+      },
+      {
+        image:'database.png',
+        name:'مطورين قواعد البيانات',
+        skills:['mysql','managoDB','sql server']
+      },
+      {
+        image:'ui_ux.png',
+        name:'مصممين واجه و تجربة المستخدم',
+        skills:['adobe xd','figma']
+      },
+      {
+        image:'graphics.png',
+        name:'مصممين',
+        skills:['photoshop','illutstator']
+      }
+    ]
+  },
+  /*===============================end of visual resources page==========================================*/
 
   /*===============================start of auth pages==========================================*/
   login:{
@@ -200,11 +285,30 @@ export default {
     edit_template:"تعديل تنسيقات الواجهه",
     select_best_section:"اختر القسم المناسب لك",
   },
+  ask_service: {
+    title:'طلب خدمة',
+    close:'اغلاق',
+    send:'ارسال',
+    inputs_labels:{
+      service_type:'نوع الخدمة',
+      info:'معلومات عن الخدمة',
+      info_file:'ارفاق ملف به مزيد من المعلومات',
+    },
+    types: {
+      remote_employee:'موظف للعمل عن بعد',
+      build_website:'بناء و برمجه موقع الكتروني',
+      build_mobile_app:'بناء و برمجه تطبيق جوال',
+      graphics:'جرافيكس',
+      marketing:'تسويق',
+    }
+  },
   general:{
     close:'اغلاق',
     are_you_sure_from_delete:'هل انت متأكد من المسح',
     confirm:'نعم متأكد',
     all:'الكل',
     in:'في',
+    ask_this_service:'أطلب الخدمة الان',
+    see_more:'معرفة المزيد'
   }
 }
