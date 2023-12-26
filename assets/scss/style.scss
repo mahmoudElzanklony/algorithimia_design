@@ -4,8 +4,8 @@
 @import "tooplit";
 
 // start of dots style
-#particles-js + div{
-  margin-top: 77px;
+#particles-js + div , #particles-js + section{
+  margin-top: 95px;
 }
 // end of dots style
 
@@ -231,7 +231,14 @@ label{
   position: absolute;
   top:4px;
 }
-
+.has_icon{
+  span{
+    position: absolute;
+    top: 36px;
+    font-size: 18px;
+    color: $gray;
+  }
+}
 .fixed-dots{
   position: fixed;
   top:25%;

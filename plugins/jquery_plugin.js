@@ -85,6 +85,20 @@ $(document).ready(function (){
       }
   });
 
+  // toggle question answer
+
+  $('#__nuxt').on('click','.question_answer .head span:last-of-type i',function (){
+    var parent = $(this).parent().parent().parent();
+    parent.parent().parent().parent().find('i').removeClass('bi-chevron-up').addClass('bi-chevron-down')
+    parent.parent().parent().parent().find('.body').slideUp();
+    if(parent.find('i').hasClass('bi-chevron-down')){
+      parent.find('i').removeClass('bi-chevron-down').addClass('bi-chevron-up')
+    }else{
+      parent.find('i').removeClass('bi-chevron-up').addClass('bi-chevron-down')
+    }
+    parent.find('.body').slideToggle();
+  });
+
   $('#__nuxt').on('click','.modal ul.list-types li',function (){
     console.log($(this));
     console.log($(this).index());

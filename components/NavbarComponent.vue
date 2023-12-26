@@ -23,6 +23,15 @@
               <li><a class="dropdown-item" :href="'/projects?category_id='+i['id']" v-for="(i,index) in all_categories" :key="index">{{ i['name'] }}</a></li>
             </ul>
           </li>
+          <li class="nav-item link mrl-1">
+            <nuxt-link to="/visualresources" class="nav-link line-hover" >{{ $attrs.words.navbar.visual_resources }}</nuxt-link>
+          </li>
+          <li class="nav-item link mrl-1">
+            <nuxt-link to="/FAQs" class="nav-link line-hover" >{{ $attrs.words.navbar.faqs }}</nuxt-link>
+          </li>
+          <li class="nav-item link mrl-1">
+            <nuxt-link to="/contact_us" class="nav-link line-hover" >{{ $attrs.words.navbar.contact_us }}</nuxt-link>
+          </li>
 
           <li class="nav-item link mrl-1"
               v-if="false && $auth.loggedIn && $auth.$state.user.hasOwnProperty('role') && $auth.$state.user.role.name == 'admin'">
@@ -42,45 +51,6 @@
             <button class="nav-link btn btn-outline-primary" @click="changeLang">
               {{ another_lang }}
             </button>
-          </li>
-          <li class="user_profile " v-if="false">
-            <ul class="dots-action cursor-pointer d-inline-block">
-              <li class="dots">
-                <img src="/images/users/2.webp" class="cursor-pointer">
-                <ul>
-                  <li>
-                    <nuxt-link to="/profile/ahmed">
-                      <span class="gray"><i class="bi bi-person-circle"></i></span>
-                      <span class="gray">{{ $attrs.words.navbar.profile }}</span>
-                    </nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/notifications">
-                      <span><i class="bi bi-bell"></i></span>
-                      <span class="gray">{{ $attrs.words.navbar.notifications }}</span>
-                    </nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/chat">
-                      <span><i class="bi bi-chat-dots"></i></span>
-                      <span class="gray">{{ $attrs.words.navbar.chat }}</span>
-                    </nuxt-link>
-                  </li>
-                  <li>
-                    <nuxt-link to="/nearest-jobs">
-                      <span><i class="bi bi-geo-alt"></i></span>
-                      <span class="gray">{{ $attrs.words.navbar.nearest_jobs }}</span>
-                    </nuxt-link>
-                  </li>
-                  <li style="border-top: 1px solid #dddddd">
-                    <nuxt-link to="/logout">
-                      <span><i class="bi bi-box-arrow-in-left"></i></span>
-                      <span class="gray">{{ $attrs.words.navbar.logout }}</span>
-                    </nuxt-link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
           </li>
 
         </ul>

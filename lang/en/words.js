@@ -10,6 +10,9 @@ export default {
     home:'Home',
     about:'About',
     categories:'Categories',
+    faqs:'FAQS',
+    visual_resources:'Visual resources',
+    contact_us:'Contact us',
     posts:'Posts',
     jobs:'Jobs',
     register:'Register',
@@ -166,11 +169,45 @@ export default {
           servers_packages:'Servers different plans',
         }
       ],
+    },
+    faq:{
+      title:'Latest frequently asked questions',
+      content:'The latest questions that we have faced in the recent period from Algorithimia customers, and we have answered them in an illustrative manner for all customers. If you have any questions, do not hesitate to contact us.',
     }
 
   },
   /*===============================end of home page==========================================*/
 
+  /*===============================start of contact us page==========================================*/
+  contact_us:{
+    title:'Contact us',
+    content:'If you have any question or you want to share us with your idea of project or want advices from us please send what you want and we will reply you back as soon as possible',
+    form:[
+      {
+        name:'name',
+        input:'name',
+        icon:'bi bi-person'
+      },
+      {
+        name:'email',
+        input:'email',
+        icon:'bi bi-envelope'
+      },
+      {
+        name:'phone',
+        input:'phone',
+        icon:'bi bi-telephone'
+      },
+      {
+        name:'info',
+        input:'info',
+        icon:'bi bi-info-circle'
+      },
+
+
+    ]
+  },
+  /*===============================end of contact us page==========================================*/
 
   /*===============================start of visual resources page==========================================*/
   visual_resources: {
@@ -229,7 +266,37 @@ export default {
         name:'Graphics designers',
         skills:['photoshop','illutstator']
       }
-    ]
+    ],
+    get_started:{
+      title:'How to get started?',
+      content:'We provide all the resources that the client or company needs, and we conclude an agreement that guarantees both parties their rights within a period of time agreed upon by both parties.',
+      steps:[
+        {
+          name:'Share the Project Requirement & Job Description',
+          content:'Provide a detailed list of your project and the developer’s skillset list, including the required experience and budget.'
+        },
+        {
+          name:'Review & Shortlist the Matches',
+          content:'We’ll match the most compatible profiles within 48 hours. You shortlist and share your preferred time slots for us to schedule interviews.'
+        },
+        {
+          name:'Interview & Hire',
+          content:'Provide feedback after you have assessed them until you are confident.'
+        },
+        {
+          name:'Onboard & Manage',
+          content:'Our team will handle all the legalities and contracts with the talent, provide smooth onboarding, and assist with talent management.'
+        }
+      ],
+      info:[
+        '100+ High-in-demand Tech Skills',
+        'Top 1% Talent Network',
+        '70% First Interview Selection Ratio',
+        '2X Employee Retention Rate',
+        'Signs Strict NDAs',
+      ],
+
+    }
   },
   /*===============================end of visual resources page==========================================*/
 
@@ -302,6 +369,7 @@ export default {
     }
   },
   general:{
+    send:'Send',
     close:'Close',
     are_you_sure_from_delete:'Are you sure from delete process',
     confirm:'Yes confirm',

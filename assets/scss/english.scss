@@ -18,6 +18,15 @@
     }
   }
 }
+.has_icon{
+  span{
+    left: 15px;
+  }
+  input,textarea{
+    padding-left: 37px;
+  }
+}
+
 // public class-----------------------
 .input-icon{
   span:first-of-type{

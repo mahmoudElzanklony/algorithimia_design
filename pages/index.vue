@@ -110,13 +110,33 @@
 
 
       <!-------------------start  of Most recently questions--------------------------- -->
-      <section class="recent_questions">
+      <section class="recent_questions mb-5">
         <div class="container">
-
+            <h2 class="big text-center">{{ $parent.$attrs.words.home.faq.title }}</h2>
+            <p class="gray text-center">{{ $parent.$attrs.words.home.faq.content }}</p>
+            <div class="row">
+              <div class="col-lg-6 col-12 mb-2">
+                 <div class="questions">
+                   <QuestionAnswerComponent class="mb-3" v-for="(i,index) in $parent.$attrs.words.visual_resources.get_started.steps"
+                                            :key="index"
+                                            :question="i['name']" :answer="i['content']"></QuestionAnswerComponent>
+                 </div>
+              </div>
+              <div class="col-lg-6 col-12 mb-2">
+                 <div class="image">
+                   <img src="/images/home/FAQ.png">
+                 </div>
+              </div>
+            </div>
+            <nuxt-link class="btn btn-outline-primary mb-5" to="/FAQs">{{ $parent.$attrs.words.general.see_more }}</nuxt-link>
         </div>
       </section>
+      <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.375118677859!2d31.343372193119425!3d30.054780253417775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e7a1bb7605d%3A0xe8e44cb0e5604cb7!2sMostafa%20El-Nahaas%2C%20Nasr%20City%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1703556372562!5m2!1sen!2seg"
+              width="100%" height="750" style="border:0;" allowfullscreen=""
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
       <!-------------------end  of Most recently questions--------------------------- -->
+
 </template>
 
 <script>
@@ -311,7 +331,14 @@ export default {
      }
   }
 }
-
+.recent_questions{
+  margin-top: 80px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
 @media(min-width: 1000px){
   .space-top{
     margin-top: 100px;

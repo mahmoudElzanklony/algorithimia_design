@@ -24,6 +24,13 @@ h1 {
   text-align: left;
 }
 
+.has_icon span {
+  left: 15px;
+}
+.has_icon input, .has_icon textarea {
+  padding-left: 37px;
+}
+
 .input-icon span:first-of-type {
   right: 10px;
 }

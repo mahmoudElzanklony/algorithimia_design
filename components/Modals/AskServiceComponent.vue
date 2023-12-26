@@ -12,12 +12,14 @@
         </div>
         <div class="modal-body">
           <form v-if="get_name != ''">
-            <div class="form-group mb-2">
+            <div class="form-group mb-2 position-relative has_icon">
               <label>{{ words.inputs_labels.service_type }}</label>
+              <span><i class="bi bi-check2"></i></span>
               <input class="form-control" name="name" :value="get_name">
             </div>
-            <div class="form-group mb-2">
+            <div class="form-group mb-2 position-relative has_icon">
               <label>{{ words.inputs_labels.info }}</label>
+              <span><i class="bi bi-info-circle"></i></span>
               <textarea class="form-control" name="info" ></textarea>
             </div>
             <div class="file_upload mb-2">

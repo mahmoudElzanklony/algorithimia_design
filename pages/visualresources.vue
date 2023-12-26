@@ -41,7 +41,27 @@
     </div>
 
     <div class="get_started">
-
+        <div class="container">
+          <h2 class="big text-center">{{ $parent.$attrs.words.visual_resources.get_started.title }}</h2>
+          <p class="text-center gray normal">{{ $parent.$attrs.words.visual_resources.get_started.content }}</p>
+          <div class="row">
+            <div class="col-md-6 col-12 mb-2">
+               <div class="steps">
+                  <QuestionAnswerComponent class="mb-3" v-for="(i,index) in $parent.$attrs.words.visual_resources.get_started.steps"
+                                           :key="index"
+                                           :question="i['name']" :answer="i['content']"></QuestionAnswerComponent>
+               </div>
+            </div>
+            <div class="col-md-6 col-12 mb-2">
+              <div class="info">
+                <p v-for="(i,index) in $parent.$attrs.words.visual_resources.get_started.info" :key="index" class="mb-3">
+                  <span class="mx-1"><i class="bi bi-patch-check"></i></span>
+                  <span>{{ i }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -112,6 +132,20 @@
           background-color: $sky;
           color:white;
         }
+      }
+    }
+  }
+}
+.get_started{
+  margin-top: 80px;
+  .info{
+    p{
+      background-color: #eeeeee30;
+      padding: 10px;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      span:first-of-type{
+        color:$sky;
       }
     }
   }
