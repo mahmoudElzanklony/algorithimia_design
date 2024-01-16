@@ -2,7 +2,10 @@
   direction: rtl;
 }
 
-
+.delete_icon{
+  right: unset !important;
+  left: 0px !important;
+}
 // services page
 .services {
   .container {
@@ -13,10 +16,10 @@
   }
 }
 .has_icon{
-  span{
+  >span{
     right: 15px;
   }
-  input,textarea{
+  input,textarea,select{
     padding-right: 37px;
   }
 }

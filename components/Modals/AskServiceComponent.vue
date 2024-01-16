@@ -28,6 +28,7 @@
                 <span class="gray"><i class="bi bi-cloud-arrow-up"></i></span>
               </div>
               <input type="file" name="file" required>
+              <p class="file_name"></p>
             </div>
             <div class="form-group mb-2">
               <input type="submit" class="form-control btn btn-primary" :value="words.send">
@@ -40,6 +41,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>

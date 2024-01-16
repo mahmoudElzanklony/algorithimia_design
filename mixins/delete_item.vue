@@ -24,7 +24,7 @@ export default {
                 cancelButtonText:cancel,
             }).then((result) => {
                 if (result.isConfirmed) {
-                    this.$axios.post('/deleteitem',{
+                    this.$axios.post('/delete-item',{
                         table:table,
                         id:id,
                         model:model,
@@ -32,12 +32,12 @@ export default {
                         if(e.data.data == 'info'){
                             Toast.fire({
                                 icon:'info',
-                                title:e.data.message[0]
+                                title:e.data.message
                             });
                         }else{
                             Toast.fire({
                                 icon:'success',
-                                title:e.data.message[0]
+                                title:e.data.message
                             });
                             if(url != false){
                                 // window.vm.$inertia.visit(url)

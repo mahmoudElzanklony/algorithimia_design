@@ -138,11 +138,11 @@ export default {
         name:'عدد المشاريع',
         value:70
       },
-      {
+      /*{
         icon:'bi bi-alarm',
         name:'عدد ساعات العمل للمشاريع',
         value:1300
-      },
+      },*/
       {
         icon:'bi bi-headset',
         name:'دعم فني',
@@ -270,6 +270,299 @@ export default {
     }
   },
   /*===============================end of visual resources page==========================================*/
+
+
+  /*===============================start of ads page==========================================*/
+  ads:{
+    title:'اخر اخبار شركة الجروزوميا',
+    content:'ستجد هنا احدث الاخبار من حيث الاعلانات و العروض القائمه علي المشاريع و خدمات الدعم و غيره ',
+  },
+  /*===============================end of ads page==========================================*/
+
+
+
+  /*===============================start of dashboard page==========================================*/
+
+
+
+
+  admin_navbar:{
+    links:[
+      {
+        name:'الرئيسية',
+        path:'/',
+        icon:'bi bi-house',
+      },
+      {
+        name:'الاقسام',
+        path:'/categories',
+        icon:'bi bi-tags',
+      },
+      {
+        name:'الخدمات',
+        path:'/services',
+        icon:'bi bi-list-check',
+      },
+      {
+        name:'المشاريع',
+        path:'/projects',
+        icon:'bi bi-lightbulb',
+      },
+      {
+        name:'الاخبار',
+        path:'/posts',
+        icon:'bi bi-lightbulb',
+      },
+      {
+        name:'الاسئله',
+        path:'/FAQs',
+        icon:'bi bi-lightbulb',
+      },
+      /*{
+        name:'الدعم',
+        path:'/support',
+        icon:'bi bi-headset',
+      },*/
+
+    ]
+  },
+
+  admin:{
+    general:{
+      categories: 'الاقسام',
+      services:'الخدمات',
+      projects:'المشاريع',
+      posts:'الاخبار و الاعلانات',
+      name:'الاسم',
+      link:'الرابط',
+      skills:'المهارات',
+      created_at:'تاريخ الاضافة',
+      search:'أبحث عما تريدة',
+      add_item:'اضافة عنصر',
+      add_another:'اضافه عنصر اخر',
+    },
+    home:{
+      quick_statistics:'احصائيات سريعة',
+    },
+    categories:{
+      modal:{
+        title:'حفظ بيانات القسم',
+        inputs:[
+          {
+            name:'الاسم بالعربي',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'الاسم بالانجليزي',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'ارفع صورة القسم',
+            input:'image',
+            type:'file',
+            multiple:false,
+          }
+        ]
+      }
+    },
+    services:{
+      modal:{
+        title:'حفظ بيانات الخدمة',
+        inputs:[
+          {
+            name:'الاسم بالعربي',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'الاسم بالانجليزي',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'معلومات عن الخدمة بالعربي',
+            input:'ar_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'معلومات عن الخدمة بالانجليزي',
+            input:'en_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'القسم',
+            input:'category_id',
+            type:'select',
+            icon:'bi bi-arrow-down',
+            options:[],
+
+            action_path:'categories/allDataAction',
+            getter_path:'categories/getData',
+          },
+          {
+            name:'ارفع صور للخدمة',
+            input:'image',
+            type:'file',
+            multiple:true,
+          }
+        ]
+      }
+    },
+    projects:{
+      modal:{
+        title:'حفظ بيانات المشروع',
+        inputs:[
+          {
+            name:'الاسم بالعربي',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'الاسم بالانجليزي',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'معلومات عن المشروع بالعربي',
+            input:'ar_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'معلومات عن المشروع بالانجليزي',
+            input:'en_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'رابط المشروع',
+            input:'link',
+            type:'text',
+            icon:'bi bi-link-45deg',
+          },
+          {
+            name:'مهارات المشروع',
+            input:'skills',
+            type:'text',
+            icon:'bi bi bi-tags',
+          },
+          {
+            name:'الخدمة',
+            input:'service_id',
+            type:'select',
+            icon:'bi bi-arrow-down',
+            options:[],
+            action_path:'services/allDataAction',
+            getter_path:'services/getData',
+          },
+          {
+            name:'ارفع صور للمشروع',
+            input:'image',
+            type:'file',
+            multiple:true,
+          }
+        ]
+      }
+    },
+    posts:{
+      modal:{
+        title:'حفظ بيانات الخبر',
+        inputs:[
+          {
+            name:'الاسم بالعربي',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'الاسم بالانجليزي',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'معلومات عن الخبر بالعربي',
+            input:'ar_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'معلومات عن الخبر بالانجليزي',
+            input:'en_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'المتطلبات',
+            input:'requirements',
+            inputs:[
+              {
+                label:'المتطلبات بالعربي',
+                input:'ar_requirements[]'
+              },
+              {
+                label: 'المتطلبات بالانجليزي',
+                input: 'en_requirements[]'
+              }
+            ],
+            type:'text',
+            icon:'bi bi-info',
+            multiple: true,
+          },
+          {
+            name:'ارفع صورة للخبر او الاعلان',
+            input:'image',
+            type:'file',
+            multiple:false,
+          }
+        ]
+      }
+    },
+    questions:{
+      modal:{
+        title:'حفظ بيانات السؤال',
+        inputs:[
+          {
+            name:'السؤال بالعربي',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'السؤال بالانجليزي',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'الاجابة بالعربي',
+            input:'ar_answer',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'الاجابة بالانجليزي',
+            input:'en_answer',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+
+        ]
+      }
+    },
+
+  },
+  /*===============================start of dashboard page==========================================*/
 
   /*===============================start of auth pages==========================================*/
   login:{

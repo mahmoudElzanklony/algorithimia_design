@@ -69,7 +69,7 @@
         <div class="layer d-flex align-items-center">
           <div class="container">
             <div class="row">
-              <div class="col-lg-3 col-md-6 col-12 mb-2" v-for="(i,key) in $parent.$attrs.words.home.statistics" :key="key">
+              <div class="col-md-4 col-12 mb-2" v-for="(i,key) in $parent.$attrs.words.home.statistics" :key="key">
                 <div class="box text-center">
                   <p class="mb-0"><span><i :class="i['icon']"></i></span></p>
                   <p class="mb-0">{{ i['name'] }}</p>
@@ -117,9 +117,9 @@
             <div class="row">
               <div class="col-lg-6 col-12 mb-2">
                  <div class="questions">
-                   <QuestionAnswerComponent class="mb-3" v-for="(i,index) in $parent.$attrs.words.visual_resources.get_started.steps"
+                   <QuestionAnswerComponent class="mb-3" v-for="(i,index) in faqs_data"
                                             :key="index"
-                                            :question="i['name']" :answer="i['content']"></QuestionAnswerComponent>
+                                            :question="i['name']" :answer="i['answer']"></QuestionAnswerComponent>
                  </div>
               </div>
               <div class="col-lg-6 col-12 mb-2">
@@ -131,6 +131,7 @@
             <nuxt-link class="btn btn-outline-primary mb-5" to="/FAQs">{{ $parent.$attrs.words.general.see_more }}</nuxt-link>
         </div>
       </section>
+
       <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.375118677859!2d31.343372193119425!3d30.054780253417775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e7a1bb7605d%3A0xe8e44cb0e5604cb7!2sMostafa%20El-Nahaas%2C%20Nasr%20City%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1703556372562!5m2!1sen!2seg"
               width="100%" height="750" style="border:0;" allowfullscreen=""
               loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -147,16 +148,17 @@ import filters_jobs_search from "../mixins/filters_jobs_search";
 import ServiceComponent from "../components/ServiceComponent";
 import ProjectInfoComponent from "../components/ProjectInfoComponent";
 import HeaderComponent from "../components/HeaderComponent";
-
+import QuestionAnswerComponent from "@/components/QuestionAnswerComponent.vue";
 import ImageComponent from "../components/ImageComponent";
 import ProjectDetailsPopUpComponent from "../components/ProjectDetailsPopUpComponent";
 import VisualResourceComponent from "../components/VisualResourceComponent";
 
 export default {
   name: 'index',
-  components: {Job_info_filters_box,ServiceComponent,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent,VisualResourceComponent,HeaderComponent},
+  components: {Job_info_filters_box,ServiceComponent,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent,VisualResourceComponent,HeaderComponent,QuestionAnswerComponent},
   mixins:[InfiniteScroll,filters_jobs_search],
   fetch(){
+    this.$store.dispatch('faq/allDataAction', '?limit=5');
     return this.$store.dispatch('services/allDataAction', '?limit=4');
 
   },
@@ -177,6 +179,7 @@ export default {
       'all_services_action':'services/allDataAction',
       'all_categories_action':'categories/allDataAction',
       'all_projects_action':'projects/allDataAction',
+      'all_faqs':'faq/allDataAction',
     }),
     check_active(category_id){
       this.selected_cat_id = category_id;
@@ -219,6 +222,7 @@ export default {
       'all_categories':'categories/getData',
       'all_projects':'projects/getData',
       'selected_project':'projects/getSelectedItem',
+      'faqs_data':'faq/getData',
     }),
     all_projects_data(){
        if(this.selected_cat_id > 0){

@@ -2,15 +2,20 @@
   direction: rtl;
 }
 
+.delete_icon {
+  right: unset !important;
+  left: 0px !important;
+}
+
 .services .container > div:nth-child(even) {
   direction: ltr;
   text-align: right;
 }
 
-.has_icon span {
+.has_icon > span {
   right: 15px;
 }
-.has_icon input, .has_icon textarea {
+.has_icon input, .has_icon textarea, .has_icon select {
   padding-right: 37px;
 }
 

@@ -30,13 +30,21 @@ export const actions = {
     this.$auth.$storage.setUniversal('redirect', null)
    // commit('loader/updateLoaderMutation',true,{root:true});
     try {
-       await this.$auth.loginWith('local', {
+       var result = await this.$auth.loginWith('local', {
         data: new FormData(target)
       })
-      console.log(this.state.auth.user)
-      await router.push('/');
+      if(result.data.status == 200 || result.data.hasOwnProperty('id')) {
+        await router.push('/');
+      }else{
+        Toast.fire({
+          icon:'error',
+          title:result.data.errors
+        });
+        return false;
+      }
       //this.$auth.setUser(response.data.user)
-    }catch {
+    }catch (e){
+      console.log(e);
       Toast.fire({
         icon:'error',
         title:'error in auth process'
@@ -44,23 +52,7 @@ export const actions = {
       await router.push('/auth/login');
       return false;
     }
-    /*return this.$axios.post('login',new FormData(target)).then((e)=>{
-      console.log(e.data);
-      formValidation(e.data,target,'/',true);
-      if(e.data.status == 200){
-        window.location = '/';
-      }
-      if(e.data.status == 200){
-        commit('InitializeData',e.data.data);
-        localStorage.setItem('user_info',JSON.stringify(e.data.data));
-        localStorage.setItem('token',e.data.data.token);
-        sessionStorage.setItem('authenticated',true);
-        document.cookie = "token="+e.data.data.token+"; expires=Thu, 01 Jan 3970 00:00:00 UTC; path=/;";
-        document.cookie = "user_info="+JSON.stringify(e.data.data)+"; expires=Thu, 01 Jan 3970 00:00:00 UTC; path=/;";
-      }
-    }).finally(() => {
-      commit('loader/updateLoaderMutation',false,{root:true});
-    });*/
+
   },
 
   async deleteUserData(){

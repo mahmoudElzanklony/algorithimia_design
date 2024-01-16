@@ -232,7 +232,7 @@ label{
   top:4px;
 }
 .has_icon{
-  span{
+  >span{
     position: absolute;
     top: 36px;
     font-size: 18px;
@@ -481,6 +481,16 @@ label{
     left: 0px;
     opacity: 0;
     cursor: pointer;
+  }
+  .file_name{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    top: 0px;
+    margin: auto;
+    color: $main_color;
+    margin-right: 15px;
   }
 
 }
@@ -924,6 +934,52 @@ ul.search-drop-down{
 // end of auth page ----------------------------------
 // start of dashboard pages ----------------------------------
 .dashboard{
+  .box{
+    text-align: center;
+    border: 1px solid $sky;
+    padding: 10px;
+    border-radius: 5px;
+    img{
+      height: 150px;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 5px;
+      display: block;
+      margin: auto;
+    }
+    .small_images{
+      span{
+        position: absolute;
+        top: -10px;
+      }
+      img{
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        margin: unset;
+        border-radius: 4px;
+        border: 1px solid #dddddd;
+        cursor: pointer;
+      }
+    }
+    div{
+      p{
+        span:first-of-type{
+          margin: auto;
+          background-color: $white_sky;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $sky;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+
   .dots-action{
     position: absolute;
     top:10px;
@@ -1089,6 +1145,9 @@ table{
   display: flex;
   justify-content: end;
   cursor: pointer;
+}
+.delete_icon{
+  top: 0px !important;
 }
 
 .swal2-container{

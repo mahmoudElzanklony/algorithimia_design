@@ -48,7 +48,7 @@ $(document).ready(function (){
   // preview image at box
   $('#__nuxt').on('change','.preview-image',function (){
     var file_data = event.target.files[0];
-    var allowed_extensions = ['png','jpg','jpeg','gif'];
+    var allowed_extensions = ['png','jpg','jpeg','gif','svg','webp'];
     if(allowed_extensions.includes(file_data.type.split('/')[1])){
       console.log(document.querySelector($(this).attr('selector')));
       document.querySelector($(this).attr('selector')).src = URL.createObjectURL(file_data);
@@ -64,6 +64,27 @@ $(document).ready(function (){
         title:msg,
       })
     }
+  });
+
+  $('#__nuxt').on('change','input[type="file"]',function (){
+    /*var file_data = event.target.files;
+    var name = '';
+    for(let item of file_data){
+      name += item.name + '  ';
+    }
+    console.log(name)*/
+    console.log(event.target.files.length);
+    $(this).next().html(event.target.files.length + ' ' +(event.target.files.length == 1 ? 'file':'files') +' uploaded ');
+  });
+
+  $('#__nuxt').on('click','.add_another_item',function (){
+    var target = $(event.target);
+    var main_section = target.parent().next();
+    var output = '<div class="form-group mb-2 position-relative has_icon">';
+    output += main_section.html();
+    output += '<span class="delete_icon"><i class="red bi bi-trash cursor-pointer delete" parent-until="1"></i></span>';
+    output += '</div>';
+    target.parent().parent().append(output)
   });
 
   // toggle between small images
@@ -87,10 +108,10 @@ $(document).ready(function (){
 
   // toggle question answer
 
-  $('#__nuxt').on('click','.question_answer .head span:last-of-type i',function (){
-    var parent = $(this).parent().parent().parent();
-    parent.parent().parent().parent().find('i').removeClass('bi-chevron-up').addClass('bi-chevron-down')
-    parent.parent().parent().parent().find('.body').slideUp();
+  $('#__nuxt').on('click','.question_answer .head p span:last-of-type i',function (){
+    var parent = $(this).parent().parent().parent().parent();
+    parent.parent().parent().parent().parent().find('i').removeClass('bi-chevron-up').addClass('bi-chevron-down')
+    parent.parent().parent().parent().parent().find('.body').slideUp();
     if(parent.find('i').hasClass('bi-chevron-down')){
       parent.find('i').removeClass('bi-chevron-down').addClass('bi-chevron-up')
     }else{
@@ -150,6 +171,27 @@ $(document).ready(function (){
     if(output){
        $($(event.target).attr('created_at')).append(output);
     }
+  });
+
+  // search js
+  $('#__nuxt').on('keyup','.js_search',function (){
+    var search = $(event.target).attr('search');
+    var filter_area = $($(event.target).attr('filter_area'));
+    for(let item of filter_area){
+      var find = $(event.target).attr('find');
+      console.log($(item).find(find).html())
+      console.log(event.target.value)
+      if($(item).find(find).html().toLocaleLowerCase().indexOf(event.target.value.toLocaleLowerCase()) >= 0 ){
+        $(item).show();
+      }else{
+        $(item).hide();
+      }
+    }
+  });
+
+  // small image clickable js
+  $('#__nuxt').on('click','.small_images img',function (){
+    $(event.target).parent().parent().prev().attr('src',event.target.getAttribute('src'))
   });
 
   // toggle open , close box modal

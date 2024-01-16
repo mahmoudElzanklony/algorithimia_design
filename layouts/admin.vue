@@ -4,8 +4,9 @@
       <div class="col-lg-2 col-md-4">
           <nav :key="current_page">
             <nuxt-link tag="img" src="/images/logo.png" class="brand cursor-pointer" to="/"></nuxt-link>
-            <ul v-if="words['links']">
-               <li v-for="(i,index) in words.links">
+            <p class="text-center fw-bold">Algorithimia</p>
+            <ul v-if="words_data['admin_navbar']">
+               <li v-for="(i,index) in words_data.admin_navbar.links" :key="index">
                  <span class="mrl-half"><i :class="i['icon']"></i></span>
                  <nuxt-link :to="'/dashboard'+i['path']">{{ i['name'] }}</nuxt-link>
                </li>
@@ -14,7 +15,7 @@
           </nav>
       </div>
       <div class="col-lg-10 col-md-8">
-        <nuxt />
+        <nuxt :words="words_data" />
         <loader v-if="loader_status" :color="'#0a58ca'" size="60px"></loader>
       </div>
     </div>
@@ -24,14 +25,13 @@
 </template>
 
 <script>
+import WordsLang from "@/mixins/WordsLang";
 
-import WordsLang from "../mixins/WordsLang";
 import {mapGetters} from "vuex";
 export default {
   name: "admin",
   data(){
      return {
-       file_name:'admin_layout',
        current_page:'',
      }
   },
@@ -39,9 +39,20 @@ export default {
   computed:{
     ...mapGetters({
       'loader_status':'loader/getLoaderGetter',
+      'words_data':'words_data_lang/getData'
     })
   },
+  errorCaptured(error, vm, info){
+    // return false
+    if (error.request && error.request.status >= 400) {
+      // Handle network errors specifically
+      this.$store.commit('setNetworkError', error);
+      return false;
+      // Display a user-friendly message or perform other actions
+    }
+  },
   mounted() {
+    console.log(this.words_data)
     this.current_page = this.$route.path.split('/')[this.$route.path.split('/').length - 1];
     for(let li of document.querySelectorAll('ul li')){
        if(li.children[1].href.indexOf(this.current_page) >= 0){
@@ -60,6 +71,7 @@ export default {
   nav {
     background-color: $main_color_more_white_bk;
     padding-top: 30px;
+    height: 100vh;
     height: 100%;
     img.brand{
       height: 75px;
@@ -88,6 +100,9 @@ export default {
           background-color: $main_color_white_bk;
           padding-right: 30px;
           padding-left: 30px;
+        }
+        &.active > span , &.active > a{
+          color:white !important;
         }
         &:hover{
           @extend .active

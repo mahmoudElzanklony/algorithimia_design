@@ -135,11 +135,11 @@ export default {
         name:'Projects number',
         value:70
       },
-      {
+      /*{
         icon:'bi bi-alarm',
         name:'Working hours for projects',
         value:1300
-      },
+      },*/
       {
         icon:'bi bi-headset',
         name:'Support',
@@ -178,6 +178,8 @@ export default {
   },
   /*===============================end of home page==========================================*/
 
+
+
   /*===============================start of contact us page==========================================*/
   contact_us:{
     title:'Contact us',
@@ -208,6 +210,294 @@ export default {
     ]
   },
   /*===============================end of contact us page==========================================*/
+
+
+  /*===============================start of ads page==========================================*/
+  ads:{
+    title:'Latest news from Algorithimia Company',
+    content:'Here you will find the latest news in terms of announcements, project-based offers, support services, etc',
+  },
+  /*===============================end of ads page==========================================*/
+
+
+
+
+  /*===============================start of admin  page==========================================*/
+  admin_navbar:{
+    links:[
+      {
+        name:'Home',
+        path:'/',
+        icon:'bi bi-house',
+      },
+      {
+        name:'Categories',
+        path:'/categories',
+        icon:'bi bi-tags',
+      },
+      {
+        name:'Services',
+        path:'/services',
+        icon:'bi bi-list-check',
+      },
+      {
+        name:'Projects',
+        path:'/projects',
+        icon:'bi bi-lightbulb',
+      },
+      {
+        name:'Posts',
+        path:'/posts',
+        icon:'bi bi-lightbulb',
+      },
+      {
+        name:'Faqs',
+        path:'/FAQs',
+        icon:'bi bi-lightbulb',
+      },
+      /*{
+        name:'Support',
+        path:'/support',
+        icon:'bi bi-headset',
+      },*/
+    ]
+  },
+  admin:{
+    general:{
+      categories: 'Categories',
+      services:'Services',
+      projects:'Projects',
+      name:'Name',
+      link:'Link',
+      skills:'Skills',
+      posts:'Posts',
+      created_at:'Created at',
+      search:'Search about any thing you want',
+      add_item:'Add item',
+      add_another:'Add another item',
+    },
+    home:{
+      quick_statistics:'Quick Statistics',
+    },
+    categories:{
+      modal:{
+        title:'Save category info',
+        inputs:[
+          {
+            name:'Arabic Name',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Name',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'upload category image',
+            input:'image',
+            type:'file',
+            multiple:false,
+          }
+        ]
+      }
+    },
+    services:{
+      modal:{
+        title:'Save Service info',
+        inputs:[
+          {
+            name:'Arabic Name',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Name',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'Arabic Info',
+            input:'ar_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Info',
+            input:'en_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'Category Name',
+            input:'category_id',
+            type:'select',
+            options:[],
+            action_path:'categories/allDataAction',
+            getter_path:'categories/getData',
+            icon:'bi bi-arrow-down',
+          },
+          {
+            name:'upload service images',
+            input:'image',
+            type:'file',
+            multiple:true,
+          }
+        ]
+      }
+    },
+    projects:{
+      modal:{
+        title:'Save project info',
+        inputs:[
+          {
+            name:'Arabic Name',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Name',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'Arabic Info',
+            input:'ar_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Info',
+            input:'en_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'Link',
+            input:'link',
+            type:'text',
+            icon:'bi bi-link-45deg',
+          },
+          {
+            name:'Skills',
+            input:'skills',
+            type:'text',
+            icon:'bi bi bi-tags',
+          },
+          {
+            name:'Service',
+            input:'service_id',
+            type:'select',
+            icon:'bi bi-arrow-down',
+            options:[],
+            action_path:'services/allDataAction',
+            getter_path:'services/getData',
+          },
+          {
+            name:'Upload project images',
+            input:'image',
+            type:'file',
+            multiple:true,
+          }
+        ]
+      }
+    },
+    posts:{
+      modal:{
+        title:'Save Post info',
+        inputs:[
+          {
+            name:'Arabic name',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English name',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'Arabic Info',
+            input:'ar_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Info',
+            input:'en_info',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'Arabic Requirements',
+            input:'requirements',
+            inputs:[
+              {
+                label:'Arabic requirements',
+                input:'ar_requirements[]'
+              },
+              {
+                label: 'English requirements',
+                input: 'en_requirements[]'
+              }
+            ],
+            type:'text',
+            icon:'bi bi-info',
+            multiple: true,
+          },
+          {
+            name:'upload image for ad or post',
+            input:'image',
+            type:'file',
+            multiple:false,
+          }
+        ]
+      }
+    },
+    questions:{
+      modal:{
+        title:'Save Question info',
+        inputs:[
+          {
+            name:'Arabic Question',
+            input:'ar_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Question',
+            input:'en_name',
+            type:'text',
+            icon:'bi bi-info',
+          },
+          {
+            name:'Arabic Answer',
+            input:'ar_answer',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+          {
+            name:'English Answer',
+            input:'en_answer',
+            type:'textarea',
+            icon:'bi bi-info',
+          },
+
+        ]
+      }
+    },
+
+
+  },
+  /*===============================end of admin  page==========================================*/
 
   /*===============================start of visual resources page==========================================*/
   visual_resources: {

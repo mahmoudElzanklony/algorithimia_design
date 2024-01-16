@@ -4,9 +4,10 @@ const Axios = require('axios')
 
 
 export default {
+  //mode: 'spa',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'JD skillar',
+    title: 'Algorithimia',
     htmlAttrs: {
       lang: 'en'
     },
@@ -22,11 +23,11 @@ export default {
     //  { rel: 'stylesheet',class:'ar_external_style',  href: '/css/arabic.css' },
     ],
     script:[
-      {src:'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js'},
-      {src:'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js'},
-      {src:'https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js'},
-      {src:'https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js'},
-      {src:'https://www.google.com/recaptcha/api.js'},
+      {src:'/js/bootstrap.min.js'},
+      {src:'/js/bootstrap.bundle.min.js'},
+    //  {src:'https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js'},
+    //  {src:'https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js'},
+    //  {src:'https://www.google.com/recaptcha/api.js'},
     ],
   },
 
@@ -53,11 +54,11 @@ export default {
     {src:'~/plugins/tooltip_plugin',mode:'client'},
     {src:'~/plugins/axios'},
     {src:'~/plugins/loader',mode:'client'},
-    {src:'~/plugins/AutoCompleteTags',mode:'client'},
+   // {src:'~/plugins/AutoCompleteTags',mode:'client'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  //components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -120,9 +121,7 @@ export default {
       }
     }
   },
-  router: {
-    middleware: ['auth_check','checkStyle'],
-  },
+
   auth: {
     redirect: {
       login: '/auth/login',
@@ -133,7 +132,8 @@ export default {
           property: 'token',
           global: true,
           required: true,
-          type: 'Bearer'
+          type: 'Bearer',
+          maxAge: 60 * 60 * 60,
         },
         user: {
           property: false,
@@ -143,8 +143,16 @@ export default {
           login: { url: '/login', method: 'post', propertyName: 'token' },
           logout: { url: '/logout', method: 'post' },
           user: { url: '/user', method: 'get', propertyName: 'user' }
-        }
+        },
+        refreshToken: {
+          property: 'token',
+          maxAge: 2016000 * 60,
+        },
       }
     }
+  },
+  router: {
+    middleware: ['auth_check','checkStyle'],
   }
+
 }

@@ -1,5 +1,5 @@
 <template>
-  <img :src="$config.url+'/images/'+src">
+  <img loading="lazy" :src="$config.url+'/images/'+src">
 </template>
 
 <script>

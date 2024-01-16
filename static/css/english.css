@@ -19,15 +19,20 @@ h1 {
 /*#navbarSupportedContent{
   flex-direction: row-reverse;
 }*/
+.delete_icon {
+  right: 0px !important;
+  left: unset !important;
+}
+
 .services .container > div:nth-child(even) {
   direction: rtl;
   text-align: left;
 }
 
-.has_icon span {
+.has_icon > span {
   left: 15px;
 }
-.has_icon input, .has_icon textarea {
+.has_icon input, .has_icon textarea, .has_icon select {
   padding-left: 37px;
 }
 
