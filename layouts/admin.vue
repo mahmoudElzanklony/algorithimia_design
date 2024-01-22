@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import WordsLang from "@/mixins/WordsLang";
 
 import {mapGetters} from "vuex";
 export default {
@@ -35,7 +34,6 @@ export default {
        current_page:'',
      }
   },
-  mixins:[WordsLang],
   computed:{
     ...mapGetters({
       'loader_status':'loader/getLoaderGetter',

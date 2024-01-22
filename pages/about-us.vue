@@ -4,39 +4,74 @@
       <div v-if="lang == 'en'">
         <h2 class="mb-4">About Us</h2>
         <p>
-          Welcome to Job Definitions, a comprehensive platform dedicated to providing detailed job descriptions, tasks, and essential information about various occupations. Our mission is to empower individuals by offering valuable insights into different job roles, helping them make informed career decisions.<br><br>
-
-
-          At Job Definitions, we understand the importance of having a clear understanding of job requirements, responsibilities, and work environments before pursuing a particular career path. We aim to bridge the gap between job seekers and job information by compiling accurate and comprehensive descriptions of numerous professions across diverse industries.<br><br>
-
-
-          <strong>Our Commitment:</strong><br>
-          At Job Definitions, we are committed to providing accurate, up-to-date, and comprehensive job information. We strive for excellence in every aspect of our platform, ensuring that our users have access to the most relevant and reliable information available.<br><br>
-
-          We understand that choosing a career path is a significant decision, and we want to make that process as informed and smooth as possible. Whether you are a student exploring different career options or a professional considering a career change, we aim to be your go-to resource for detailed job descriptions and essential insights.<br><br>
-
-          Our team of dedicated professionals works tirelessly to curate and verify the information we provide on our platform. We continuously update our database to reflect the evolving nature of job roles, ensuring that our users have access to the most accurate and relevant information.<br><br>
-
-          Join our community of job seekers, students, and professionals who rely on Job Definitions to gain valuable knowledge about different occupations. Explore our platform, discover new career paths, and make informed decisions about your professional journey.<br><br>
+          Welcome to algorithimia, where innovation meets excellence in the world of software solutions. At algorithimia,
+          we are dedicated to crafting cutting-edge software that empowers businesses, enhances user experiences, and drives technological advancements.
         </p>
+          <h3><strong>Our Mission:</strong></h3>
+          <p>
+            Our mission is to revolutionize the digital landscape by delivering exceptional software
+            solutions that transform the way businesses operate and individuals engage with technology.
+             We strive to be at the forefront of innovation, consistently pushing the boundaries of what is possible in the realm of software development.
+          </p>
+          <h3><strong>Who We Are:</strong></h3>
+          <p>
+            algorithimia is a team of passionate and skilled professionals with diverse expertise in software engineering,
+            design, and project management. We bring together a wealth
+            of experience and a shared commitment to delivering high-quality, scalable, and secure software products.
+          </p>
+          <h3><strong>Core Values</strong></h3>
+          <ul>
+            <li>
+              <strong>Innovation : </strong>We embrace creativity and continuously seek innovative solutions. We foster a culture that encourages curiosity, learning, and staying ahead of industry trends.
+            </li>
+            <li>
+              <strong>Quality : </strong>Our commitment to quality is unwavering. We adhere to the highest standards in software development, ensuring that our products are robust, reliable, and meet the evolving needs of our clients.
+            </li>
+            <li>
+              <strong>Collaboration : </strong>We believe in the power of collaboration. By working closely with our clients and within our team, we cultivate an environment that promotes open communication, mutual respect, and shared success.
+            </li>
+            <li>
+              <strong>Customer-Centric : </strong>Our clients are at the heart of everything we do. We listen attentively to their needs, understand their challenges, and tailor our solutions to exceed their expectations.
+            </li>
+          </ul>
       </div>
       <div v-else>
         <h2 class="mb-4">من نحن</h2>
         <p>
-          مرحبًا بك في Job Definitions، وهي منصة شاملة مخصصة لتقديم الأوصاف الوظيفية التفصيلية والمهام والمعلومات الأساسية حول المهن المختلفة. مهمتنا هي تمكين الأفراد من خلال تقديم رؤى قيمة حول الأدوار الوظيفية المختلفة، ومساعدتهم على اتخاذ قرارات مهنية مستنيرة.<br><br>
+          مرحبًا بك في الجورزميا، حيث تلتقي الابتكارات بالتفوق في عالم حلول البرمجيات. في [اسم شركتك]، نكرس جهودنا لصياغة برمجيات متقدمة تمكّن الشركات، وتعزز تجارب المستخدمين، وتدفع بالتقدم التكنولوجي.
 
-          في تعريفات الوظيفة، نحن ندرك أهمية وجود فهم واضح لمتطلبات الوظيفة والمسؤوليات وبيئات العمل قبل متابعة مسار وظيفي معين. نحن نهدف إلى سد الفجوة بين الباحثين عن عمل ومعلومات الوظائف من خلال تجميع أوصاف دقيقة وشاملة للعديد من المهن في مختلف الصناعات.
-          <br><br>
-
-
-          <strong>التزامنا:</strong><br>
-          في تعريفات الوظيفة، نحن ملتزمون بتوفير معلومات وظيفية دقيقة وحديثة وشاملة. نحن نسعى جاهدين لتحقيق التميز في كل جانب من جوانب منصتنا، مما يضمن حصول مستخدمينا على الوصول إلى المعلومات المتاحة الأكثر صلة وموثوقية.<br><br>
-
-          نحن ندرك أن اختيار المسار الوظيفي هو قرار مهم، ونريد أن نجعل هذه العملية مدروسة وسلسة قدر الإمكان. سواء كنت طالبًا يستكشف خيارات وظيفية مختلفة أو محترفًا يفكر في تغيير مهنتك، فإننا نهدف إلى أن نكون مصدرك المفضل للحصول على الأوصاف الوظيفية التفصيلية والرؤى الأساسية.<br><br>
-          يعمل فريقنا من المحترفين المتفانين بلا كلل لتنظيم المعلومات التي نقدمها على منصتنا والتحقق منها. نقوم باستمرار بتحديث قاعدة بياناتنا لتعكس الطبيعة المتطورة للأدوار الوظيفية، مما يضمن حصول مستخدمينا على الوصول إلى المعلومات الأكثر دقة وذات صلة.<br><br>
-
-          انضم إلى مجتمعنا من الباحثين عن عمل والطلاب والمهنيين الذين يعتمدون على تعريفات الوظيفة لاكتساب معرفة قيمة حول المهن المختلفة. استكشف منصتنا، واكتشف مسارات وظيفية جديدة، واتخذ قرارات مستنيرة بشأن رحلتك المهنية.<br><br>
         </p>
+
+
+
+        <h3><strong>مهمتنا:</strong></h3>
+        <p>
+
+          مهمتنا هي أن نحدث ثورة في المشهد الرقمي من خلال تقديم حلول برمجية استثنائية تحول طريقة عمل الشركات وتعزز تفاعل الأفراد مع التكنولوجيا. نسعى جاهدين لنكون في طليعة الابتكار، محركين باستمرار حدود ما هو ممكن في مجال تطوير البرمجيات.
+        </p>
+        <h3><strong>من نحن:</strong></h3>
+        <p>
+
+          الجورزميا هي فريق من المحترفين الملتزمين والمتحمسين بخبرة متنوعة في هندسة البرمجيات والتصميم وإدارة المشاريع. نجمع بين ثروة من الخبرات والتزام مشترك بتقديم منتجات برمجية عالية الجودة وقابلة للتوسع وآمنة.
+
+        </p>
+        <h3><strong>القيم الأساسية
+        </strong></h3>
+        <ul>
+          <li>
+            <strong>الابتكار : </strong>نحن نحتضن الإبداع ونسعى باستمرار للعثور على حلول مبتكرة. نعزز ثقافة تشجيع الفضول والتعلم والبقاء في طليعة اتجاهات الصناعة.
+          </li>
+          <li>
+            <strong>الجودة : </strong>لتزامنا بالجودة لا يتزعزع. نلتزم بأعلى المعايير في تطوير البرمجيات، مضمونين أن منتجاتنا قوية وموثوقة وتلبي احتياجات عملائنا المتطورة.
+          </li>
+          <li>
+            <strong>التعاون : </strong>نؤمن بقوة التعاون. من خلال العمل الوثيق مع عملائنا وضمن فريقنا، نحن نعزز بيئة تعزز من التواصل المفتوح واحترام الآراء والنجاح المشترك
+          </li>
+          <li>
+            <strong>التوجه نحو العميل : </strong>عملاؤنا هم في قلب كل ما نقوم به. نستمع بانتباه إلى احتياجاتهم، ونفهم تحدياتهم، ونقدم حلاً مخصصًا يتجاوز توقعاتهم
+          </li>
+        </ul>
+
       </div>
 
       <pre v-else></pre>
@@ -83,5 +118,9 @@ export default {
 
 <style lang="scss">
 @import "~style/variables";
-
+ul{
+  li{
+    margin-bottom: 10px;
+  }
+}
 </style>

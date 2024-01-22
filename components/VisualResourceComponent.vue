@@ -22,10 +22,11 @@
         </div>
       </div>
       <div class="text-center">
-         <button class="btn btn-outline-white" data-bs-toggle="modal"
+<!--         <button class="btn btn-outline-white" data-bs-toggle="modal"
                  @click="set_service_name(words.ask_service.types.remote_employee)"
-                 data-bs-target="#ask_service">{{ words.general.ask_this_service }}</button>
-         <nuxt-link  class="btn btn-outline-white white" to="/visualresources">{{ words.general.see_more }}</nuxt-link>
+                 data-bs-target="#ask_service">{{ words.general.ask_this_service }}</button>-->
+        <button class="btn btn-outline-white" ><a class="white on-hover-gray" href="mailto: info@algorithimia.com">{{ words.general.ask_this_service }}</a></button>
+         <nuxt-link v-if="see_more_status"  class="btn btn-outline-white white" to="/visualresources">{{ words.general.see_more }}</nuxt-link>
       </div>
     </div>
 
@@ -38,10 +39,20 @@
   export default {
     name:'VisualResourceComponent',
     props:['words'],
+    data(){
+      return {
+        see_more_status:true,
+      }
+    },
     methods:{
       ...mapMutations({
         'set_service_name':'ask_service/InitializeName'
       }),
+    },
+    mounted() {
+      if(document.URL.indexOf('visual') >= 0){
+        this.see_more_status = false;
+      }
     }
   }
 </script>

@@ -7,6 +7,9 @@
 #particles-js + div , #particles-js + section{
   margin-top: 95px;
 }
+*{
+  text-transform: capitalize;
+}
 // end of dots style
 
 // edit bootstrap-----------------------
@@ -128,6 +131,9 @@ label{
   top:13px;
 }
 .gray{
+  color:$gray !important;
+}
+.on-hover-gray:hover{
   color:$gray !important;
 }
 .blue{

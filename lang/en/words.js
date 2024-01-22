@@ -10,6 +10,7 @@ export default {
     home:'Home',
     about:'About',
     categories:'Categories',
+    services:'Services',
     faqs:'FAQS',
     visual_resources:'Visual resources',
     contact_us:'Contact us',
@@ -73,7 +74,7 @@ export default {
         content:'We provide ideas to investors in various fields and how to get started. We also provide the highest-ranking employees to meet all the needs of the investor in any idea he wants to invest in.',
       }
     ],
-    service_title:'What are Algorithimia services?',
+    service_title:'Algorithimia services',
     service_content:'What Algorismia can provide you with are many services. If you have any questions or want to subscribe to any of these services, please contact us.',
     service_projects_visit:'See projects related to this service',
     projects_title:'Algorithimia Projects',
@@ -201,6 +202,11 @@ export default {
         icon:'bi bi-telephone'
       },
       {
+        name:'Subject',
+        input:'contact_reason',
+        icon:'bi bi-stickies'
+      },
+      {
         name:'info',
         input:'info',
         icon:'bi bi-info-circle'
@@ -248,12 +254,12 @@ export default {
       {
         name:'Posts',
         path:'/posts',
-        icon:'bi bi-lightbulb',
+        icon:'bi bi-journals',
       },
       {
         name:'Faqs',
         path:'/FAQs',
-        icon:'bi bi-lightbulb',
+        icon:'bi bi-patch-question',
       },
       /*{
         name:'Support',

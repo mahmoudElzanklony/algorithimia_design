@@ -15,7 +15,10 @@
           <li class="nav-item link mrl-1">
             <nuxt-link to="/about-us" class="nav-link line-hover" href="/about-us">{{ $attrs.words.navbar.about }}</nuxt-link>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item link mrl-1">
+            <nuxt-link to="/#services" class="nav-link line-hover">{{ $attrs.words.navbar.services }}</nuxt-link>
+          </li>
+          <li class="nav-item dropdown" v-if="false">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{ $attrs.words.navbar.categories }}
             </a>

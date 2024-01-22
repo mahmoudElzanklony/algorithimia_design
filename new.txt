@@ -1,0 +1,13 @@
+services top section 
+
+projects as slider
+
+change representation of project
+
+remove filter from projects
+
+Algorithimia Services rather than what ..........
+
+when click on services at navbar go to scroll down to this section
+
+subject at contact us

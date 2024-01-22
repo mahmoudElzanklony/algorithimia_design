@@ -2,11 +2,56 @@
 
     <div class="main-page" >
 
-      <HeaderComponent  class="mb-5" :words="$parent.$attrs.words"></HeaderComponent>
+      <HeaderComponent id="header"  class="mb-5" :words="$parent.$attrs.words"></HeaderComponent>
 
 
 
-      <section class="features mt-5 mb-5" >
+      <!-------------------start of services section--------------------------- -->
+      <section id="services" class="services mb-5">
+        <div class="container">
+          <h2 class="big text-center" >{{ $parent.$attrs.words.home.service_title }}</h2>
+          <p class="gray text-center mb-4" >{{ $parent.$attrs.words.home.service_content }}</p>
+          <ServiceComponent :words="$parent.$attrs.words.home"
+                            v-for="(i,index) in all_services"
+                            :key="index" :service="i"></ServiceComponent>
+        </div>
+        <nuxt-link to="/services" class="d-block white btn btn-primary"
+
+                   style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_services }}</nuxt-link>
+      </section>
+      <!-------------------end of services section--------------------------- -->
+
+      <!-------------------start of projects section--------------------------- -->
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2 class="big text-center" >{{ $parent.$attrs.words.home.projects_title }}</h2>
+          <p class="gray text-center" >{{ $parent.$attrs.words.home.projects_content }}</p>
+          <ul class="d-flex justify-content-between flex-wrap" v-if="false">
+            <li class="mx-1" >
+              <button @click="check_active(0)" class="btn btn-primary">{{ $parent.$attrs.words.general.all }}</button>
+            </li>
+            <li class="cursor-pointer mx-1 mb-2" v-for="(i,key) in all_categories" :key="key" >
+              <button @click="check_active(i['id'])" class="btn btn-outline-primary">{{ i['name'] }}</button>
+            </li>
+          </ul>
+
+
+          <div class="inner_projects">
+            <SlickComponent>
+              <div v-for="(i,key) in all_projects_data" :key="key">
+                <ProjectInfoComponent :data="i" :words="$parent.$attrs.words.home"></ProjectInfoComponent>
+              </div>
+            </SlickComponent>
+
+          </div>
+          <nuxt-link to="/projects" class="d-block white btn btn-primary" style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_projects }}</nuxt-link>
+        </div>
+        <ProjectDetailsPopUpComponent :data="selected_project" :close_word="$parent.$attrs.words.general.close"></ProjectDetailsPopUpComponent>
+      </section>
+      <!-------------------end of projects section--------------------------- -->
+
+
+      <section id="features" class="features mt-5 mb-5" >
         <div class="container">
           <h2 class="big text-center">{{ $parent.$attrs.words.home.features_title }}</h2>
           <p class="gray text-center mb-4">{{ $parent.$attrs.words.home.features_content }}</p>
@@ -22,50 +67,9 @@
         </div>
       </section>
 
-      <!-------------------start of services section--------------------------- -->
-      <section class="services mb-5">
-        <div class="container">
-          <h2 class="big text-center" >{{ $parent.$attrs.words.home.service_title }}</h2>
-          <p class="gray text-center mb-4" >{{ $parent.$attrs.words.home.service_content }}</p>
-          <ServiceComponent :words="$parent.$attrs.words.home"
-                            v-for="(i,index) in all_services"
-                            :key="index" :service="i"></ServiceComponent>
-        </div>
-        <nuxt-link to="/services" class="d-block white btn btn-primary"
-
-                   style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_services }}</nuxt-link>
-      </section>
-      <!-------------------end of services section--------------------------- -->
-
-      <!-------------------start of projects section--------------------------- -->
-      <section class="projects">
-        <div class="container">
-          <h2 class="big text-center" >{{ $parent.$attrs.words.home.projects_title }}</h2>
-          <p class="gray text-center" >{{ $parent.$attrs.words.home.projects_content }}</p>
-          <ul class="d-flex justify-content-between flex-wrap">
-            <li class="mx-1" >
-              <button @click="check_active(0)" class="btn btn-primary">{{ $parent.$attrs.words.general.all }}</button>
-            </li>
-            <li class="cursor-pointer mx-1 mb-2" v-for="(i,key) in all_categories" :key="key" >
-              <button @click="check_active(i['id'])" class="btn btn-outline-primary">{{ i['name'] }}</button>
-            </li>
-          </ul>
-        </div>
-        <div class="inner_projects">
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12" v-for="(i,key) in all_projects_data" :key="key">
-              <ProjectInfoComponent :data="i" :words="$parent.$attrs.words.home"></ProjectInfoComponent>
-
-            </div>
-          </div>
-          <nuxt-link to="/projects" class="d-block white btn btn-primary" style="width: max-content; margin: 20px auto">{{ $parent.$attrs.words.home.all_projects }}</nuxt-link>
-        </div>
-        <ProjectDetailsPopUpComponent :data="selected_project" :close_word="$parent.$attrs.words.general.close"></ProjectDetailsPopUpComponent>
-      </section>
-      <!-------------------end of projects section--------------------------- -->
 
       <!-------------------start of statistics section--------------------------- -->
-      <section class="statistics">
+      <section id="statistics" class="statistics">
         <div class="layer d-flex align-items-center">
           <div class="container">
             <div class="row">
@@ -84,7 +88,7 @@
 
       <!-------------------start of team section--------------------------- -->
 
-      <section class="team">
+      <section id="team" class="team">
         <div class="container">
           <h2 class="big text-center">{{ $parent.$attrs.words.home.team_title }}</h2>
           <p class="gray text-center">{{ $parent.$attrs.words.home.team_content }}</p>
@@ -105,7 +109,7 @@
       <!-------------------end of team section--------------------------- -->
 
       <!-------------------start of visual resource--------------------------- -->
-      <VisualResourceComponent :words="$parent.$attrs.words"></VisualResourceComponent>
+      <VisualResourceComponent id="visual_resources" :words="$parent.$attrs.words"></VisualResourceComponent>
       <!-------------------end of visual resource--------------------------- -->
 
 
@@ -152,20 +156,22 @@ import QuestionAnswerComponent from "@/components/QuestionAnswerComponent.vue";
 import ImageComponent from "../components/ImageComponent";
 import ProjectDetailsPopUpComponent from "../components/ProjectDetailsPopUpComponent";
 import VisualResourceComponent from "../components/VisualResourceComponent";
-
+import SlickComponent from "../components/SlickComponent.vue";
 export default {
   name: 'index',
-  components: {Job_info_filters_box,ServiceComponent,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent,VisualResourceComponent,HeaderComponent,QuestionAnswerComponent},
+  components: {
+    SlickComponent,
+    Job_info_filters_box,ServiceComponent,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent,VisualResourceComponent,HeaderComponent,QuestionAnswerComponent},
   mixins:[InfiniteScroll,filters_jobs_search],
   fetch(){
     this.$store.dispatch('faq/allDataAction', '?limit=5');
     return this.$store.dispatch('services/allDataAction', '?limit=4');
 
   },
+
   data(){
     return {
       data: [],
-
       lang:'',
       selected_cat_id:0,
       meta:{
@@ -194,7 +200,8 @@ export default {
     }
     this.all_projects_action('?limit=12');
     this.lang = localStorage.getItem('lang');
-    console.log(this.$store.state)
+
+
   },
   head() {
     return {

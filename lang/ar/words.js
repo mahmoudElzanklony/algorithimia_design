@@ -12,6 +12,7 @@ export default {
     home:'الرئيسية',
     about:'من نحن',
     categories:'الاقسام',
+    services:'الخدمات',
     faqs:'احدث الاسئلة',
     visual_resources:'موارد الشركة',
     contact_us:'تواصل معنا',
@@ -272,6 +273,43 @@ export default {
   /*===============================end of visual resources page==========================================*/
 
 
+  /*===============================start of contact us page==========================================*/
+  contact_us:{
+    title:'تواصل معنا',
+    content:'إذا كان لديك أي سؤال أو كنت تريد مشاركتنا بفكرة مشروعك أو تريد نصائح منا، يرجى إرسال ما تريد وسنقوم بالرد عليك في أقرب وقت ممكن',
+    form:[
+      {
+        name:'الاسم',
+        input:'name',
+        icon:'bi bi-person'
+      },
+      {
+        name:'البريد الالكتروني',
+        input:'email',
+        icon:'bi bi-envelope'
+      },
+      {
+        name:'الهاتف المحمول',
+        input:'phone',
+        icon:'bi bi-telephone'
+      },
+      {
+        name:'سبب التواصل',
+        input:'contact_reason',
+        icon:'bi bi-stickies'
+      },
+      {
+        name:'نص الرساله',
+        input:'info',
+        icon:'bi bi-info-circle'
+      },
+
+
+    ]
+  },
+  /*===============================end of contact us page==========================================*/
+
+
   /*===============================start of ads page==========================================*/
   ads:{
     title:'اخر اخبار شركة الجروزوميا',
@@ -311,12 +349,12 @@ export default {
       {
         name:'الاخبار',
         path:'/posts',
-        icon:'bi bi-lightbulb',
+        icon:'bi bi-journals',
       },
       {
         name:'الاسئله',
         path:'/FAQs',
-        icon:'bi bi-lightbulb',
+        icon:'bi bi-patch-question',
       },
       /*{
         name:'الدعم',

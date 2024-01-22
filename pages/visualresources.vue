@@ -68,9 +68,12 @@
 
 <script>
   import VisualResourceComponent from "../components/VisualResourceComponent";
+  import QuestionAnswerComponent from "@/components/QuestionAnswerComponent.vue";
+
   export default {
     name:'visualresources',
-    components:{VisualResourceComponent}
+    components:{VisualResourceComponent,QuestionAnswerComponent},
+
   }
 </script>
 

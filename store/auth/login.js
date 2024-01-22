@@ -28,30 +28,33 @@ export const actions = {
     var target = event.target;
     // Clear the redirect path
     this.$auth.$storage.setUniversal('redirect', null)
-   // commit('loader/updateLoaderMutation',true,{root:true});
-    try {
-       var result = await this.$auth.loginWith('local', {
+    // commit('loader/updateLoaderMutation',true,{root:true});
+
+
+      await this.$auth.loginWith('local', {
         data: new FormData(target)
-      })
-      if(result.data.status == 200 || result.data.hasOwnProperty('id')) {
-        await router.push('/');
-      }else{
+      }).then((e)=>{
+        if(e.data.status === 200 || e.data.hasOwnProperty('id')) {
+           router.push('/');
+        }else{
+          console.log('error');
+          Toast.fire({
+            icon:'error',
+            title:e.data.errors
+          });
+          router.push('/auth/login');
+        }
+      }).catch((e)=>{
         Toast.fire({
           icon:'error',
-          title:result.data.errors
+          title:e.response.data.errors
         });
         return false;
-      }
-      //this.$auth.setUser(response.data.user)
-    }catch (e){
-      console.log(e);
-      Toast.fire({
-        icon:'error',
-        title:'error in auth process'
-      });
-      await router.push('/auth/login');
-      return false;
-    }
+
+      })
+
+
+
 
   },
 

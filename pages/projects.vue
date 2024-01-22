@@ -10,7 +10,7 @@
           <span v-if="service_id != null && all_projects_data.length > 0">{{ $parent.$attrs.words.general.in+' '+all_projects_data[0]['service']['name'] }}</span>
         </h2>
         <p class="gray text-center" v-if="cat_id == null">{{ $parent.$attrs.words.home.projects_content }}</p>
-        <ul class="d-flex justify-content-between flex-wrap" v-if="cat_id == null && service_id == null">
+        <ul class="d-flex justify-content-between flex-wrap" v-if="cat_id == null && service_id == null && false">
           <li class="mx-1" >
             <button @click="check_active(0)" class="btn btn-primary">{{ $parent.$attrs.words.general.all }}</button>
           </li>
@@ -20,11 +20,12 @@
         </ul>
       </div>
       <div class="inner_projects">
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12" v-for="(i,key) in all_projects_data" :key="key">
-            <ProjectInfoComponent :data="i" :words="$parent.$attrs.words.home"></ProjectInfoComponent>
-
-          </div>
+        <div class="container">
+          <SlickComponent>
+            <div v-for="(i,key) in all_projects_data" :key="key">
+              <ProjectInfoComponent :data="i" :words="$parent.$attrs.words.home"></ProjectInfoComponent>
+            </div>
+          </SlickComponent>
         </div>
       </div>
       <ProjectDetailsPopUpComponent :data="selected_project" :close_word="$parent.$attrs.words.general.close"></ProjectDetailsPopUpComponent>
@@ -41,10 +42,11 @@ import Job_info_filters_box from "../components/Modals/job_info_filters_box";
 import ProjectInfoComponent from "../components/ProjectInfoComponent";
 import ImageComponent from "../components/ImageComponent";
 import ProjectDetailsPopUpComponent from "../components/ProjectDetailsPopUpComponent";
+import SlickComponent from "../components/SlickComponent.vue";
 
 export default {
   name: 'index',
-  components: {Job_info_filters_box,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent},
+  components: {SlickComponent, Job_info_filters_box,ProjectInfoComponent,ImageComponent,ProjectDetailsPopUpComponent},
   mixins:[InfiniteScroll],
   data(){
     return {

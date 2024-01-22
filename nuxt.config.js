@@ -4,7 +4,7 @@ const Axios = require('axios')
 
 
 export default {
-  //mode: 'spa',
+  mode: 'ssr',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Algorithimia',
@@ -25,7 +25,9 @@ export default {
     script:[
       {src:'/js/bootstrap.min.js'},
       {src:'/js/bootstrap.bundle.min.js'},
-    //  {src:'https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js'},
+      {src:'https://www.google.com/recaptcha/api.js', async: true, defer: true,},
+
+      //  {src:'https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js'},
     //  {src:'https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js'},
     //  {src:'https://www.google.com/recaptcha/api.js'},
     ],
@@ -54,6 +56,9 @@ export default {
     {src:'~/plugins/tooltip_plugin',mode:'client'},
     {src:'~/plugins/axios'},
     {src:'~/plugins/loader',mode:'client'},
+    {src:'~/plugins/route'},
+    { src: '~/plugins/slick-slider.js',mode:'client',ssr:false },
+
    // {src:'~/plugins/AutoCompleteTags',mode:'client'},
   ],
 
@@ -73,8 +78,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    '@nuxtjs/sitemap'
-    /*'@nuxtjs/recaptcha'*/
+    '@nuxtjs/sitemap',
+    '@nuxtjs/recaptcha'
   ],
 
   sitemap: {
@@ -97,13 +102,13 @@ export default {
 
 
   },
-  /*recaptcha: {
-    /!* reCAPTCHA options *!/
-    siteKey: '6LfvFEclAAAAAFBdk7D9g0MePCnSpil7pyumkMjA', // for example,
+  recaptcha: {
+    /* reCAPTCHA options */
+    siteKey: '6LepOFMpAAAAAJ59Vnc-nvWTN0hNKW7HlJK-1fet', // for example,
     hideBadge: false,
     size: 'invisible',
     version: 2
-  },*/
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -148,7 +153,8 @@ export default {
           property: 'token',
           maxAge: 2016000 * 60,
         },
-      }
+      },
+
     }
   },
   router: {

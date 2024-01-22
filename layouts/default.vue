@@ -1,13 +1,13 @@
 <template>
   <div>
-      <navbar-component  :words="words_data"></navbar-component>
+    <navbar-component  :words="words_data"></navbar-component>
 
-      <DotsComponent></DotsComponent>
-      <nuxt  :words="words_data" :error="networkError"/>
-      <span class="up"><i class="bi bi-arrow-up"></i></span>
-      <loader v-if="loader_status" :color="'#0a58ca'" size="60px"></loader>
-      <ask-service-component :words="words_data.ask_service"></ask-service-component>
-      <footer-component :words="words_data"></footer-component>
+    <DotsComponent></DotsComponent>
+    <nuxt  :words="words_data" :error="networkError"/>
+    <span class="up"><i class="bi bi-arrow-up"></i></span>
+    <loader v-if="loader_status" :color="'#0a58ca'" size="60px"></loader>
+    <ask-service-component :words="words_data.ask_service"></ask-service-component>
+    <footer-component :words="words_data"></footer-component>
 
 
   </div>
@@ -15,7 +15,7 @@
 
 <script>
 
-import WordsLang from "../mixins/WordsLang";
+
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import text_editor from "../mixins/text_editor";
@@ -26,7 +26,7 @@ import DotsComponent from "../components/DotsComponent.vue";
 
 export default {
   name: "default",
-  mixins:[text_editor,WordsLang],
+  mixins:[text_editor],
   data(){
     return {
 
@@ -66,4 +66,3 @@ export default {
   },
 }
 </script>
-
