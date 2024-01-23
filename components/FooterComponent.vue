@@ -30,7 +30,7 @@
               <li>
                 <nuxt-link to="#" class="position-relative">
                   <span class="mrl-1"><i class="bi bi-envelope"></i></span>
-                  <span>info@skillar.com</span>
+                  <span>info@algorithimia.com</span>
                 </nuxt-link>
               </li>
               <li>
