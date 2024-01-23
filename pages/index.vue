@@ -88,7 +88,7 @@
 
       <!-------------------start of team section--------------------------- -->
 
-      <section id="team" class="team">
+      <section id="team" class="team" v-if="false">
         <div class="container">
           <h2 class="big text-center">{{ $parent.$attrs.words.home.team_title }}</h2>
           <p class="gray text-center">{{ $parent.$attrs.words.home.team_content }}</p>
