@@ -1,10 +1,10 @@
 <template>
   <div class="row align-items-center mb-4" v-if="Object.keys(words).length > 0 && service != null">
     <div class="col-lg-5 col-12 mb-2">
-      <div class="content">
+      <div class="content text-center-mobile" >
         <p class="fw-bold mb-2">{{ service['name'] }}</p>
         <p class="gray">{{ service['info'] }}</p>
-        <a target="_blank" :href="'/projects?service_id='+service['id']" class="btn btn-outline-primary">{{ words.service_projects_visit }}</a>
+        <a target="_blank" :href="'/projects?service_id='+service['id']" class="btn btn-outline-primary mb-2">{{ words.service_projects_visit }}</a>
       </div>
     </div>
     <div class="col-lg-7 col-12">

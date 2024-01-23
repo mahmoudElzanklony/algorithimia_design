@@ -4,7 +4,7 @@
           v-if="Object.keys($attrs).length > 0  &&  Object.keys($attrs.words).length > 0">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6 col-12 mb-2">
+        <div class="col-md-6 col-12 mb-2 text-center-mobile">
           <p class="fw-bold big w-100">
             <span>{{ $attrs.words.header.welcome_to }}</span>
             <span class="sky">{{ $attrs.words.header.company_name }}</span>
