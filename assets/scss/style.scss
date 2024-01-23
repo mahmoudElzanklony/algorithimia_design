@@ -67,6 +67,9 @@ nav{
     align-items: center;
   }
 }
+nav + div , nav + section {
+  margin-top:80px;
+}
 .navbar-brand{
   height: 60px;
 }
