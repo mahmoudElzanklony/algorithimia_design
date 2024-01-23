@@ -1,6 +1,8 @@
 <template>
-  <div class="inner_projects" v-slick="slickOptions" ref="slickContainer">
-    <slot></slot>
+  <div v-if="status">
+    <div class="inner_projects" v-slick="slickOptions" ref="slickContainer">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -30,7 +32,11 @@ export default {
           },
         ],
       },
+      status:false
     }
+  },
+  mounted() {
+    this.status = true;
   }
 }
 </script>
