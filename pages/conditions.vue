@@ -4,7 +4,7 @@
       <div v-if="lang == 'en'">
         <h2 class="mb-4">User Conditions:</h2>
         <p>
-          When using Job Definitions, you agree to the following user conditions:
+          When using algorithimia.com, you agree to the following user conditions:
         </p>
         <ol>
           <li>You will use the website solely for personal and non-commercial purposes.</li>
@@ -18,7 +18,7 @@
       <div v-else>
         <h2 class="mb-4">سياسة المستخدم</h2>
         <p>
-          عند استخدام تعريفات الوظيفة، فإنك توافق على شروط المستخدم التالية:
+          عند استخدام الجورزميا، فإنك توافق على شروط المستخدم التالية:
         </p>
         <ol>
           <li>سوف تستخدم الموقع فقط للأغراض الشخصية وغير التجارية.</li>

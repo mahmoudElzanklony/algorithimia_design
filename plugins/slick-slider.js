@@ -29,9 +29,8 @@ Vue.directive('slick', {
 
     // Listen for the component mount event using the global event bus
     setTimeout(()=>{
-      console.log('testttttt')
       initSlick()
-    },2000)
+    },3000)
 
 
     // Check if the component is already mounted

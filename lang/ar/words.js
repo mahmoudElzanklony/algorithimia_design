@@ -39,6 +39,7 @@ export default {
     terms_of_service:'شروط الخدمة',
     user_condition:'أتفاقية المستخدم',
     contact:'التواصل',
+    about_us:'من نحن',
   },
 
   /*===============================start of home page==========================================*/

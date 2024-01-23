@@ -37,6 +37,7 @@ export default {
     terms_of_service:'Terms of service',
     user_condition:'User condition',
     contact:'Contact',
+    about_us:'About us',
   },
   /*===============================start of home page==========================================*/
   home:{
