@@ -4,7 +4,7 @@
     <div class="container" v-if="Object.keys($attrs).length > 0  &&  Object.keys($attrs.words).length > 0">
       <nuxt-link class="navbar-brand cursor-pointer position-relative"
                  to="/" tag="img" style="top: -6px;" src="/images/logo.png"></nuxt-link>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse mrl-reverse-15" id="navbarSupportedContent">
@@ -129,6 +129,11 @@ export default {
       }else{
         this.another_lang = 'اللغة العربية';
       }
+
+    document.querySelector('.navbar-toggler').addEventListener('click', function () {
+      // Toggle the visibility of the mobile menu
+      document.querySelector('.navbar-collapse').classList.toggle('show');
+    });
   }
 }
 </script>
