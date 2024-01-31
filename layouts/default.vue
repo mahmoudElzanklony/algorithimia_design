@@ -7,7 +7,7 @@
     <span class="up"><i class="bi bi-arrow-up"></i></span>
     <loader v-if="loader_status" :color="'#0a58ca'" size="60px"></loader>
     <ask-service-component :words="words_data.ask_service"></ask-service-component>
-    <DotsComponent></DotsComponent>
+    <DotsComponent v-if="false"></DotsComponent>
     <footer-component :words="words_data"></footer-component>
 
 

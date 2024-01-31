@@ -68,7 +68,7 @@ header{
     padding-top: 50px;
     position: relative;
     transition: 1s all;
-    animation-name: top_down;
+    //animation-name: top_down;
     animation-iteration-count: infinite;
     animation-duration: 2s;
     animation-direction: alternate;

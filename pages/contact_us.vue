@@ -47,7 +47,7 @@ export default {
   img{
     position: relative;
     top:0px;
-    animation-name: top_down;
+    //animation-name: top_down;
     animation-iteration-count: infinite;
     animation-duration: 2s;
     animation-direction: alternate;
